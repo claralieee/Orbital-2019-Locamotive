@@ -14,4 +14,12 @@
 
 <body>
 	{{> sidebar}}
+	<!-- This is where main layout is rendered -->	
 </body>
+
+<template name="main_layout">
+	<div class="main-content">
+	{{> yield}}	
+	</div>
+
+</template>
