@@ -1,5 +1,5 @@
 Tracker.autorun(function(){
-	if(Meteor.userId()) {
+	if(Meteor.userId()){
 		Router.go("/jokes");
 	}
 });
@@ -13,25 +13,33 @@ Template.login.rendered = function() {
 }
 
 Template.login.events({
-	"submit .form-signin": function(event) {
+	"submit .form-signin": function(event){
 		var email = trimInput(event.target.email.value);
 		var password = trimInput(event.target.password.value);
 
-		if(isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && isValidPassword(password)) {
-			Meteor.loginWithPassword(email, password, function(err) {
+		if(isNotEmpty(email) &&
+			isNotEmpty(password) &&
+			isEmail(email) &&
+			isValidPassword(password)){
+
+			Meteor.loginWithPassword(email, password, function(err){
 				if(err) {
 					Bert.alert(err.reason, "danger", "growl-top-right");
 					return false;
-				}
-				else {
+				} else {
 					Router.go("/jokes");
-					Bert.alert("You are now Logged in", "success", "growl-top-right");
+					Bert.alert("You are now logged in", "success", "growl-top-right");
 				}
 			});
+
 		}
-		return false;
+
+		return false // Prevent Submit
 	}
+
 });
+
+// Validation Rules
 
 // Trim Helper
 var trimInput = function(val){

@@ -6,14 +6,14 @@ Meteor.startup(function() {
     var day = new Date().getDate();
     var date = (month + "/" + day + "/" + year).toString();
 
-      // Super User
+    	// Super User
       Accounts.createUser({
         username: 'Super User',
         email: 'Super@user.com',
         password: 'password',
         profile: {
-          laughScore: 0,
-          frownScore: 0,
+        	laughScore: 0,
+        	frownScore: 0,
           pukeScore: 0,
         }
       });

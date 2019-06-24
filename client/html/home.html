@@ -1,7 +1,7 @@
 <template name="jokes">
 
 	{{> jokeForm}}
-
+	
 	{{#each jokes}}
 	<!-- Joke -->
 	<div class="joke">
@@ -24,9 +24,9 @@
 		</div>
 
 		<p class="regular joke-desc">"{{jokePost}}"</p>
+
 	</div>
 	<!-- End Joke -->
-
 	{{else}}
 	<h1>no jokes to display</h1>
 	{{/each}}

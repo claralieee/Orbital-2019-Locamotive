@@ -7,22 +7,26 @@ Template.jokeForm.events({
 		var jokeName = event.target.jokeName.value;
 		var jokePost = event.target.jokePost.value;
 
-		if(isNotEmpty(jokeName) && isNotEmpty(jokePost)) {
+		if (isNotEmpty(jokeName) &&
+			isNotEmpty(jokePost)) {
+
 			Meteor.call('addJokes', jokeName, jokePost);
-			
+
 			event.target.jokeName.value = "";
 			event.target.jokePost.value = "";
 
 			Bert.alert("Your Joke Was Posted!", "success", "growl-top-right");
-		}
-		else {
+
+		} else {
+			
 			Bert.alert("something went wrong", "danger", "growl-top-right");
 		}
-		return false;
+
+		return false; // prevent submit
 	}
 });
 
-//Validation rules
+// Validation Rules
 
 var isNotEmpty = function(value){
 	if (value && value !== ''){
