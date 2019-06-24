@@ -11,7 +11,7 @@ Template.rankings.helpers({
 		var laughKing = Meteor.users.findOne({},{sort: {'profile.laughScore': -1}});
 		return laughKing;
 	},
-
+	
 	frownKing: function() {
 		var frownKing = Meteor.users.findOne({},{sort: {'profile.frownScore': -1}});
 		return frownKing;
@@ -21,4 +21,6 @@ Template.rankings.helpers({
 		var pukeKing = Meteor.users.findOne({},{sort: {'profile.pukeScore': -1}});
 		return pukeKing;
 	},
+
+	
 });
