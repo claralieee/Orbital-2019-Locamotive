@@ -1,6 +1,6 @@
 Tracker.autorun(function(){
 	if(Meteor.userId()){
-		Router.go("/jokes");
+		Router.go("/plans");
 	}
 });
 
@@ -9,7 +9,7 @@ Template.login.rendered = function() {
 	$("#profile-link").removeClass('selected');
 	$("#rankings-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
-	$("#jokes-link").removeClass('selected');
+	$("#plans-link").removeClass('selected');
 }
 
 Template.login.events({
@@ -27,7 +27,7 @@ Template.login.events({
 					Bert.alert(err.reason, "danger", "growl-top-right");
 					return false;
 				} else {
-					Router.go("/jokes");
+					Router.go("/plans");
 					Bert.alert("You are now logged in", "success", "growl-top-right");
 				}
 			});

@@ -6,19 +6,19 @@
   margin: 0 0 40px 250px;
 }
 
-.joke {
+.plan {
 	border: 1px solid #ececec;
 	background-color: #2d2d2d;
 	padding: 10px 20px;
 	margin: 0px 0px 20px 0px;
 }
 
-.joke:hover {
+.plan:hover {
 	
 	background-color: #3a3a3a;
 }
 
-.joke-img {
+.plan-img {
  	width: 100%;
  	max-height: 500px;
  	color:#fff;
@@ -31,7 +31,7 @@
 	-o-background-size:cover;
 }
 
-.joke-title {
+.plan-title {
 	color: #52b859;
 	font-size: 40px;
 	margin: 0px 0px;
@@ -45,7 +45,7 @@
 	font-weight: 900;
 }
 
-.joke-desc {
+.plan-desc {
 	color: #bcbcbc;
 	font-size: 18px;
     line-height: 1.8;

@@ -1,0 +1,30 @@
+<template name="planForm">
+	{{#if currentUser}}
+	<!-- Plan Form-->
+	<div id="planForm-wrap">
+		<center>
+			<form class="plan-post">
+				<h2 class="planForm-heading">Post a Plan</h2>
+				<label for="planName" class="sr-only">Plan Name</label>
+				<input type="text" name="planName" id="planName" class="form-control" placeholder="Plan Name" maxlength="40">
+				<label for="planPost" class="sr-only">Plan Post</label>
+				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="Break A Leg!" maxlength="140">
+
+				<button class="btn btn-lg btn-success btn-block" type="submit">Post Plan</button>
+			</form>
+		</center>
+	</div>
+	<!-- End Plan Form-->
+	{{else}}
+	<!-- Plan Form-->
+	<div id="planForm-wrap">
+		<center>
+			<form class="plan-post">
+				<h2 class="form-signin-heading">Log In To Post A Plan</h2>
+				<a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+			</form>
+		</center>
+	</div>
+	<!-- End Plan Form-->
+	{{/if}}
+</template>

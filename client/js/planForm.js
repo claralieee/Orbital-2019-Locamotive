@@ -1,19 +1,19 @@
-Template.jokeForm.rendered = function() {
+Template.planForm.rendered = function() {
 
 }
 
-Template.jokeForm.events({
-	"submit .joke-post": function() {
-		var jokeName = event.target.jokeName.value;
-		var jokePost = event.target.jokePost.value;
+Template.planForm.events({
+	"submit .plan-post": function() {
+		var planName = event.target.planName.value;
+		var planPost = event.target.planPost.value;
 
-		if (isNotEmpty(jokeName) &&
-			isNotEmpty(jokePost)) {
+		if (isNotEmpty(planName) &&
+			isNotEmpty(planPost)) {
 
-			Meteor.call('addJokes', jokeName, jokePost);
+			Meteor.call('addJokes', planName, planPost);
 
-			event.target.jokeName.value = "";
-			event.target.jokePost.value = "";
+			event.target.planName.value = "";
+			event.target.planPost.value = "";
 
 			Bert.alert("Your Joke Was Posted!", "success", "growl-top-right");
 

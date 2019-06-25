@@ -1,6 +1,6 @@
 Template.profile.rendered = function() {
 	$("#profile-link").addClass('selected');
-	$("#jokes-link").removeClass('selected');
+	$("#plans-link").removeClass('selected');
 	$("#rankings-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
@@ -26,11 +26,11 @@ Template.profile.helpers({
 		}
 	}, 
 
-	userJokes: function() {
+	userPlans: function() {
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
-		var userJokes = Jokes.find({userId: userId}, {sort: {createdAt: -1}});
-		return userJokes;
+		var userPlans = Plans.find({userId: userId}, {sort: {createdAt: -1}});
+		return userPlans;
 	},
 
 	userLaughScore: function() {
@@ -55,9 +55,9 @@ Template.profile.helpers({
 });
 
 Template.profile.events({
-	"click #delete-joke": function() {
-		Meteor.call("removeJoke", this._id);
-		Bert.alert("Your Joke Was Deleted", "success", "growl-top-right");
+	"click #delete-plan": function() {
+		Meteor.call("removePlan", this._id);
+		Bert.alert("Your Plan Was Deleted", "success", "growl-top-right");
 	},
 
 	"submit .edit-profile": function(event) {

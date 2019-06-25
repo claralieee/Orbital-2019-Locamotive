@@ -31,12 +31,12 @@
 	</div>
 	<!-- End profile -->
 
-	{{#each userJokes}}
-	<!-- Joke -->
-	<div class="joke">
+	{{#each userPlans}}
+	<!-- Plan -->
+	<div class="plan">
 		<div class="row">
 			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
-				<h1 class="joke-title">{{jokeName}}</h1>
+				<h1 class="plan-title">{{planName}}</h1>
 				<p class="meta">Author: {{author}}</p>
 				<p class="meta">Posten On: {{date}}</p>
 			</div>
@@ -52,13 +52,13 @@
 			</div>
 		</div>
 
-		<p class="regular joke-desc">"{{jokePost}}"</p>
-		<button class="btn btn-sml btn-danger" id="delete-joke">Delete Joke</button>
+		<p class="regular plan-desc">"{{planPost}}"</p>
+		<button class="btn btn-sml btn-danger" id="delete-plan">Delete Plan</button>
 
 	</div>
-	<!-- End Joke -->
+	<!-- End Plan -->
 	{{else}}
-	<h1>no jokes to display</h1>
+	<h1>no plans to display</h1>
 	{{/each}}
 
 <!-- Js for switching file picker span -->

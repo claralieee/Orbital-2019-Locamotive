@@ -2,7 +2,7 @@ Template.search.rendered = function() {
 	$("#search-link").addClass('selected');
 	$("#profile-link").removeClass('selected');
 	$("#rankings-link").removeClass('selected');
-	$("#jokes-link").removeClass('selected');
+	$("#plans-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 }
 
@@ -11,17 +11,17 @@ Template.search.helpers({
 		return { 'class': 'easy-search-input', 'placeholder': 'Start Searching' };
 	},
 	players: function() {
-		return Jokes.find({}, { sort: { createdAt: -1 } });
+		return Plans.find({}, { sort: { createdAt: -1 } });
 	},
 	selectedName: function() {
-		var joke = JokesIndex.config.mongoCollection.findOne({ __originalId: Session.get("selectedJoke") });
-		return joke && joke.jokeName;
+		var plan = PlansIndex.config.mongoCollection.findOne({ __originalId: Session.get("selectedPlan") });
+		return plan && plan.planName;
 	},
 	index: function () {
-		return JokesIndex;
+		return PlansIndex;
 	},
 	resultsCount: function() {
-		return JokesIndex.getComponentDict().get('count');
+		return PlansIndex.getComponentDict().get('count');
 	},
 	showMore: function() {
 		return false;
@@ -33,12 +33,12 @@ Template.search.helpers({
 
 Template.User.helpers({
 	selected: function() {
-		return Session.equals("selectedJoke", this.__originalId) ? "selected" : '';
+		return Session.equals("selectedPlan", this.__originalId) ? "selected" : '';
 	},
 });
 
 Template.User.events({
 	'click': function() {
-		Session.set("selectedJoke", this.__originalId);
+		Session.set("selectedPlan", this.__originalId);
 	}
 });
