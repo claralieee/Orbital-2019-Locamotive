@@ -1,7 +1,7 @@
 Template.profile.rendered = function() {
 	$("#profile-link").addClass('selected');
 	$("#plans-link").removeClass('selected');
-	$("#rankings-link").removeClass('selected');
+	$("#build-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 

@@ -33,3 +33,8 @@ cfs:gridfs
 easy:search
 easysearch:elasticsearch
 easysearch:autosuggest
+mrt:moment
+mrt:jquery-ui
+gquemart:meteor-reactive-fullcalendar
+
+

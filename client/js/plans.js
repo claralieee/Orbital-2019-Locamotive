@@ -1,7 +1,7 @@
 Template.plans.rendered = function() {
 	$("#plans-link").addClass('selected');
 	$("#profile-link").removeClass('selected');
-	$("#rankings-link").removeClass('selected');
+	$("#build-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 }
