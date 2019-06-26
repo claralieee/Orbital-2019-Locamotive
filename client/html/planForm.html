@@ -4,13 +4,22 @@
 	<div id="planForm-wrap">
 		<center>
 			<form class="plan-post">
-				<h2 class="planForm-heading">Post a Plan</h2>
-				<label for="planName" class="sr-only">Plan Name</label>
-				<input type="text" name="planName" id="planName" class="form-control" placeholder="Plan Name" maxlength="40">
-				<label for="planPost" class="sr-only">Plan Post</label>
-				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="Break A Leg!" maxlength="140">
+				<h2 class="planForm-heading">Share Your Itinerary</h2>
+				<label for="planName" class="sr-only">Title</label>
+				<input type="text" name="planName" id="planName" class="form-control" placeholder="Title" maxlength="100">
+				<label for="planPost" class="sr-only">Description</label>
+				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="Description">
 
-				<button class="btn btn-lg btn-success btn-block" type="submit">Post Plan</button>
+				<label for="planSelect">Choose A Trip:</label>			
+				<select id="planSelect">
+					{{#each userPlans}}
+					<option>{{planName}}</option>
+					{{/each}}
+				</select>
+
+
+				<!-- Drop down menu -->
+				<button class="btn btn-lg btn-success btn-block" type="submit">Share</button>
 			</form>
 		</center>
 	</div>
@@ -20,7 +29,7 @@
 	<div id="planForm-wrap">
 		<center>
 			<form class="plan-post">
-				<h2 class="form-signin-heading">Log In To Post A Plan</h2>
+				<h2 class="form-signin-heading">Log In To Share Your Itinerary</h2>
 				<a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
 			</form>
 		</center>
