@@ -4,18 +4,23 @@
 	<div id="planForm-wrap">
 		<center>
 			<form class="plan-post">
+				{{#each userPlans}}
 				<h2 class="planForm-heading">Share Your Itinerary</h2>
 				<label for="planName" class="sr-only">Title</label>
 				<input type="text" name="planName" id="planName" class="form-control" placeholder="Title" maxlength="100">
 				<label for="planPost" class="sr-only">Description</label>
 				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="Description">
 
+				
 				<label for="planSelect">Choose A Trip:</label>			
 				<select id="planSelect">
-					{{#each userPlans}}
 					<option>{{planName}}</option>
-					{{/each}}
 				</select>
+
+				{{else}}
+				<h1>no plans to publish</h1>
+				<p><a href="/build">Plan</a> your trip here</p>
+				{{/each}}
 
 
 				<!-- Drop down menu -->
