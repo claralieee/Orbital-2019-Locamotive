@@ -8,7 +8,7 @@ Template.sidebar.events({
 			if(err) {
 				Bert.alert(err.reason, "danger", "growl-top-right");
 			} else {
-				Router.go('/');
+				Router.go('/login');
 				Bert.alert("you Are Now Logged Out", "success", "growl-top-right");
 			}
 		});

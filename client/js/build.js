@@ -9,12 +9,12 @@ Template.build.rendered = function() {
 Template.build.helpers({
         calendarOptions: {
             // Standard fullcalendar options
-            height: 700,
+            height: 500,
             hiddenDays: [ 0 ],
             slotDuration: '01:00:00',
             minTime: '08:00:00',
             maxTime: '19:00:00',
-            lang: 'fr',
+            lang: 'eng',
             // Function providing events reactive computation for fullcalendar plugin
             events: function(start, end, timezone, callback) {
                 //console.log(start);
@@ -42,7 +42,7 @@ Template.build.helpers({
             // Optional: id of the calendar
             id: "calendar1",
             // Optional: Additional classes to apply to the calendar
-            addedClasses: "col-md-8",
+            addedClasses: "col-md-30",
             // Optional: Additional functions to apply after each reactive events computation
             autoruns: [
                 function () {
