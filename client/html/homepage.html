@@ -1,17 +1,17 @@
 <template name="homepage">
-	<div id="planForm-wrap">
-		<center>
-			<form class="homepage">
-				<h2 class="planForm-heading">Start Planning Your Dream Holiday!</h2>
-				<label for="planName" class="sr-only">Destination</label>
-				<input type="text" name="planName" id="planName" class="form-control" placeholder="Destination" maxlength="100">
-				<label for="planPost" class="sr-only">From</label>
-				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="Start Date">
-				<label for="planPost" class="sr-only">To</label>
-				<input type="text" name="planPost" id="planPost" class="form-control" placeholder="End Date">
 
-				<button class="btn btn-lg btn-success btn-block" type="submit">Begin!</button>
-			</form>
-		</center>
-	</div>
+	<form class="startpage" id="register-form">
+		<h2 class="form-signin-heading">Locamotive</h2>
+
+		<label for="destination" class="sr-only">Where are you headed to?</label>
+		<input type="text" name="destination" id="destination" class="form-control" placeholder="Destination">
+
+		<label for="startDate" class="sr-only">From:</label>
+		<input type="text" name="startDate" id="startDate" class="form-control" placeholder="Start Date">
+
+		<label for="end-date" class="sr-only">To</label>
+		<input type="text" name="endDate" id="endDate" class="form-control" placeholder="End Date">
+
+		<button class="btn btn-lg btn-success btn-block" type="submit">Begin</button>
+	</form>
 </template>

@@ -10,7 +10,7 @@ Template.planForm.events({
 		if (isNotEmpty(planName) &&
 			isNotEmpty(planPost)) {
 
-			Meteor.call('addJokes', planName, planPost);
+			Meteor.call('addPlans', planName, planPost);
 
 			event.target.planName.value = "";
 			event.target.planPost.value = "";
