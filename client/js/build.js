@@ -13,12 +13,14 @@ Template.build.onRendered(() => {
     var y = date.getFullYear();
     $('#calendarDiv').fullCalendar({
         header: {
-            left: 'basicDay, basicWeek, month',
+            left: 'basicDay, agendaWeek, month',
             center: 'title',
             right: 'today prev,next'
         },
+        aspectRatio: 4,
+        height: 800,
         editable: true,
-        weekends: false,
+        weekends: true,
         events: [{
             id: 1,
             title: 'Birthday',
@@ -51,6 +53,15 @@ Template.build.onRendered(() => {
             start: new Date(y, m, 5, 18),
             allDay: false,
             color: '#e67e22'
-        }]
+        }],
+        dayClick: function(date) {
+            alert("Clicked on " + date.format());
+        },
+        eventClick: function(event) {
+            alert("Event title: " + event.title + "\nEvent description: " + event.description + "\nEvent time: " + moment(event.start).format("hh:mm A"));
+        },
+        eventMouseover: function(calEvent) {
+            $(this).css('background-color', 'black');
+        }
     });
 });
