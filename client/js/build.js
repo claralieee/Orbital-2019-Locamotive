@@ -6,48 +6,51 @@ Template.build.rendered = function() {
 	$("#login-link").removeClass('selected');
 }
 
-Template.build.helpers({
-        calendarOptions: {
-            // Standard fullcalendar options
-            height: 500,
-            hiddenDays: [ 0 ],
-            slotDuration: '01:00:00',
-            minTime: '08:00:00',
-            maxTime: '19:00:00',
-            lang: 'eng',
-            // Function providing events reactive computation for fullcalendar plugin
-            events: function(start, end, timezone, callback) {
-                //console.log(start);
-                //console.log(end);
-                //console.log(timezone);
-                var events = [];
-                // Get only events from one document of the Calendars collection
-                // events is a field of the Calendars collection document
-                var calendar = Calendars.findOne(
-                    { "_id":"myCalendarId" },
-                    { "fields": { 'events': 1 } }
-                );
-                // events need to be an array of subDocuments:
-                // each event field named as fullcalendar Event Object property is automatically used by fullcalendar
-                if (calendar && calendar.events) {
-                    calendar.events.forEach(function (event) {
-                        eventDetails = {};
-                        for(key in event)
-                            eventDetails[key] = event[key];
-                        events.push(eventDetails);
-                    });
-                }
-                callback(events);
-            },
-            // Optional: id of the calendar
-            id: "calendar1",
-            // Optional: Additional classes to apply to the calendar
-            addedClasses: "col-md-30",
-            // Optional: Additional functions to apply after each reactive events computation
-            autoruns: [
-                function () {
-                    console.log("user defined autorun function executed!");
-                }
-            ]
+Template.build.onRendered(() => {
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    $('#calendarDiv').fullCalendar({
+        header: {
+            left: 'basicDay, basicWeek, month',
+            center: 'title',
+            right: 'today prev,next'
         },
+        editable: true,
+        weekends: false,
+        events: [{
+            id: 1,
+            title: 'Birthday',
+            start: new Date(y, m, 1),
+            allDay: true,
+            description: 'Happy Birthday',
+        }, {
+            id: 2,
+            title: 'Concert',
+            start: '2016-12-07T21:00:00',
+            end :'2016-12-07T23:00:00',
+            allDay: false,
+            color: '#e74c3c'
+        }, {
+            id: 3,
+            title: 'Lunch',
+            start: new Date(y, m, 16, 14),
+            end: new Date(y, m, 16, 16),
+            allDay: false,
+            color: '#3498db'
+        }, {
+            id: 4,
+            title: 'Class',
+            start: new Date(y, m, 20, 10),
+            allDay: false,
+            color: '#9b59b6'
+        }, {
+            id: 5,
+            title: 'Party',
+            start: new Date(y, m, 5, 18),
+            allDay: false,
+            color: '#e67e22'
+        }]
     });
+});
