@@ -1,3 +1,41 @@
 <template name="login">
+	{{#if currentUser}}
+	<h2>You are logged in. Return <a href="/jokes">home</a></h2>
+
+	{{else}}
+	<div class="span4 offset1" id="signinbox">
+    	<header class="page-header">
+    		<h2>Sign In</h2>
+    	</header>
+
+    	<h4>
+    		<span>Already have an account...</span>
+    	</h4>
+
+    	<form id="loginForm" class="form-login">
+    		<div class="control-group">
+                <input type="text" name="username" id="username" placeholder="Email" aria-label="email" value="">
+            </div>
+            <div class="control-group">
+                <input type="password" name="password" id="password" placeholder="Password" aria-label="password">
+            </div>
+            <div class="control-actions">
+                <button type="submit" class="btn">Sign In</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="span4 offset2" id="signupbox">
+        <header class="page-header">
+        	<h2>Sign Up</h2>
+        </header>
+        <h4>
+        	<span>No Account?</span>
+        </h4>
+        <div class="control-actions">
+        	<a href="/signup" class="btn">Sign up</a>
+        </div>
+    </div>
+    {{/if}}
 
 </template>
