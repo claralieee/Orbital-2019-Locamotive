@@ -1,0 +1,43 @@
+<template name="signup">
+
+	{{#if currentUser}}
+	<div class="notice">
+		<h2>You are logged in. Return <a href="/jokes">home</a></h2>
+	</div>
+
+	{{else}}
+	<div class="page-content">
+
+		<div class="page-header">
+			<h2>Create an Account</h2>
+		</div>
+
+		<div class="actualForm">
+			<form id="signupForm" class="form-signup">
+
+				<label for="username" class="labels">Username</label>
+				<input type="text" name="username" class="form-control" placeholder="Username" >
+
+				<label for="email" class="labels">Email</label>
+				<input type="email" name="email" class="form-control" placeholder="Email">
+
+				<label for="password" class="labels">Password</label>
+				<input type="password" name="password" class="form-control" placeholder="Password">
+
+				<label for="password-confirm" class="labels">Confirm Password</label>
+				<input type="password" name="password-confirm" class="form-control" placeholder="Confirm Password">
+
+				<!-- buttons need to redirect -->
+				<div class="control-actions">
+					<a class="btn btn-light bth-sm" href="/login" role="button">Cancel</a>
+					<button type="submit" id="signup-btn" class="btn btn-light btn-sm">Sign Up</button>
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	{{/if}}
+</template>

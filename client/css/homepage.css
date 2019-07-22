@@ -1,0 +1,23 @@
+.start {
+	position: relative;
+	overflow: hidden;
+}
+
+.start .blob {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	background-position: center center;
+}
+
+.start .bg {
+	width: 898.4px;
+	left: 899px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	right: 0;
+	bottom: 0;
+
+}

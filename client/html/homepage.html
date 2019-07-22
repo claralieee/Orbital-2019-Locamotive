@@ -1,63 +1,65 @@
 <template name="homepage">
 
-	<!-- image -->
-	<!-- to have background image or image at the side? to consider -->
-
-	<!-- destination form -->
-	<div id="dest-form">
-
-		<h2>Start Planning Your Dream Holiday!</h2>
-    	
-    	<div class="container">
-
-    		<p>Where are you headed to?</p>
-    		<form autocomplete="off" action="/action_page.php">
-  				<div class="autocomplete">
-    				<input id="myInput" type="text" name="myCountry" placeholder="Country">
-  				</div>
-  			<input type="submit">
-			</form>
-
-
-        	<div class='col-md-5'>
-            	<div class="form-group">
-                	<label>Start Date:</label>
-                	<div class='input-group date' id='datetimepicker6'>
-                    	<input type='text' class="form-control" />
-                    	<span class="input-group-addon">
-                        	<span class="glyphicon glyphicon-calendar"></span>
-                    	</span>
-                	</div>
-            	</div>
-        	</div>
+    <section id="home-section" class="start">
         
-        	<div class='col-md-5'>
-            	<div class="form-group">
-                	<label>End Date:</label>
-                	<div class='input-group date' id='datetimepicker7'>
-                    	<input type='text' class="form-control" />
-                    	<span class="input-group-addon">
-                        	<span class="glyphicon glyphicon-calendar"></span>
-                    	</span>
-                	</div>
-            	</div>
-        	</div>
-            
-    	</div>
-    
-    	<script type="text/javascript">
-        	$(function () {
-            	$('#datetimepicker6').datetimepicker();
-            	$('#datetimepicker7').datetimepicker();
-            	$("#datetimepicker6").on("dp.change", function (e) {
-                	$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-            	});
-            	$("#datetimepicker7").on("dp.change", function (e) {
-                	$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-            	});
-        	});
-    	</script>
+        <!-- image -->
+        <img src="blob.png" class="blob">
+        <img src="greece.jpg" class="bg">
 
-	</div>
+        <!-- destination form -->
+        <div id="dest-form">
+
+            <h2>Start Planning Your Dream Holiday!</h2>
+
+            <div class="container">
+                <p>Where are you headed to?</p>
+                <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                    </div>
+                    <input type="submit">
+                </form>
+
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <label>Start Date:</label>
+                        <div class='input-group date' id='datetimepicker6'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <label>End Date:</label>
+                        <div class='input-group date' id='datetimepicker7'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                $(function () {
+            	   $('#datetimepicker6').datetimepicker();
+            	   $('#datetimepicker7').datetimepicker();
+            	   $("#datetimepicker6").on("dp.change", function (e) {
+                	   $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+            	   });
+            	   $("#datetimepicker7").on("dp.change", function (e) {
+                	   $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+            	   });
+        	   });
+            </script>
+
+        </div>
+
+    </section>
 
 </template>
