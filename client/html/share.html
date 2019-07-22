@@ -1,0 +1,53 @@
+<template name="share">
+	{{#if currentUser}}
+	<div id="sharing-content">
+		<div class="box-header">
+            <h2>Share Your Itineraries</h2>
+        </div>
+
+		<form id="sharingForm" class="form-share">
+
+			<label for="title" class="sharing-labels">Title</label>
+			<input type="text" name="title" id="titleBox" class="form-control" placeholder="Title">
+
+			<!-- drop down menu (might need to edit/update)-->
+			<label for="planSelect">Choose A Trip:</label>			
+				<select id="planSelect">
+					<option>{{planName}}</option>
+				</select>
+
+			<label for="description" class="sharing-labels">Description</label>
+			<input type="text" name="description" id="descriptionBox" class="form-control" placeholder="Description">
+
+			<div class="tagBox">
+				
+				<div class="tag-header">
+					<h4>
+            			<span>Tags</span>
+        			</h4>
+				</div>
+
+				<label class="checkbox-inline"><input type="checkbox" value="backpack">Backpacking</label>
+				<label class="checkbox-inline"><input type="checkbox" value="beach">Beach</label>
+				<label class="checkbox-inline"><input type="checkbox" value="city">City</label>
+				<label class="checkbox-inline"><input type="checkbox" value="culture">Culture</label>
+				<label class="checkbox-inline"><input type="checkbox" value="food">Food</label>
+				<label class="checkbox-inline"><input type="checkbox" value="hiking">Hiking</label>
+				<label class="checkbox-inline"><input type="checkbox" value="nature">Nature</label>
+				<label class="checkbox-inline"><input type="checkbox" value="outdoor">Outdoor</label>
+			</div>
+
+			<button type="submit" id="publish-plan" class="btn btn-light btn-sm">Share</button>
+			
+		</form>
+		
+	</div>
+
+	{{else}}
+	<div id="notice">
+		<h2 class="login-notice">Please <a href="/login">Login</a> to Continue</h2>
+	</div>
+
+	{{/if}}
+
+</template>
