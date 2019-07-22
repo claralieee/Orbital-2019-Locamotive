@@ -1,4 +1,5 @@
 <template name="share">
+
 	{{#if currentUser}}
 	<div id="sharing-content">
 		<div class="box-header">
@@ -10,37 +11,38 @@
 			<label for="title" class="sharing-labels">Title</label>
 			<input type="text" name="title" id="titleBox" class="form-control" placeholder="Title">
 
-			<!-- drop down menu (might need to edit/update)-->
-			<label for="planSelect">Choose A Trip:</label>			
-				<select id="planSelect">
-					<option>{{planName}}</option>
-				</select>
+			<!-- drop down menu (might need to edit/update to link to the database)-->
+			<label for="tripSelect" class="sharing-labels">Choose A Trip:</label>	
+			<select id="tripSelect">
+				<option value="">Choose A Trip...</option>
+				{{#each trip}}
+					<option value="{{tripName}}">{{tripName}}</option>
+				{{/each}}
+			</select>
 
 			<label for="description" class="sharing-labels">Description</label>
 			<input type="text" name="description" id="descriptionBox" class="form-control" placeholder="Description">
 
 			<div class="tagBox">
-				
 				<div class="tag-header">
 					<h4>
             			<span>Tags</span>
         			</h4>
 				</div>
 
-				<label class="checkbox-inline"><input type="checkbox" value="backpack">Backpacking</label>
-				<label class="checkbox-inline"><input type="checkbox" value="beach">Beach</label>
-				<label class="checkbox-inline"><input type="checkbox" value="city">City</label>
-				<label class="checkbox-inline"><input type="checkbox" value="culture">Culture</label>
-				<label class="checkbox-inline"><input type="checkbox" value="food">Food</label>
-				<label class="checkbox-inline"><input type="checkbox" value="hiking">Hiking</label>
-				<label class="checkbox-inline"><input type="checkbox" value="nature">Nature</label>
-				<label class="checkbox-inline"><input type="checkbox" value="outdoor">Outdoor</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="backpack">Backpacking</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="beach">Beach</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="city">City</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="culture">Culture</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="food">Food</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="hiking">Hiking</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="nature">Nature</label>
+				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="outdoor">Outdoor</label>
 			</div>
 
 			<button type="submit" id="publish-plan" class="btn btn-light btn-sm">Share</button>
 			
 		</form>
-		
 	</div>
 
 	{{else}}

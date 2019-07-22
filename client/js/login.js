@@ -4,6 +4,10 @@ Tracker.autorun(function(){
 	}
 });
 
+Template.login.rendered = function() {
+
+}
+
 Template.login.events({
 	"submit .form-login": function(event){
 		var email = trimInput(event.target.email.value);
@@ -19,7 +23,7 @@ Template.login.events({
 					Bert.alert(err.reason, "danger", "growl-top-right");
 					return false;
 				} else {
-					Router.go("/account");
+					Router.go("/profile");
 					Bert.alert("You are now logged in", "success", "growl-top-right");
 				}
 			});

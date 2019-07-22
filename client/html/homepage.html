@@ -1,65 +1,48 @@
 <template name="homepage">
 
-    <section id="home-section" class="start">
-        
-        <!-- image -->
-        <img src="blob.png" class="blob">
+    <div class="scenery">
         <img src="greece.jpg" class="bg">
+    </div>
 
-        <!-- destination form -->
-        <div id="dest-form">
+    <div class="destinationbox">
 
-            <h2>Start Planning Your Dream Holiday!</h2>
+        <img src="blob.png" class="blob">
 
-            <div class="container">
-                <p>Where are you headed to?</p>
-                <form autocomplete="off" action="/action_page.php">
-                    <div class="autocomplete">
-                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
-                    </div>
-                    <input type="submit">
-                </form>
-
-                <div class='col-md-5'>
-                    <div class="form-group">
-                        <label>Start Date:</label>
-                        <div class='input-group date' id='datetimepicker6'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='col-md-5'>
-                    <div class="form-group">
-                        <label>End Date:</label>
-                        <div class='input-group date' id='datetimepicker7'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <script type="text/javascript">
-                $(function () {
-            	   $('#datetimepicker6').datetimepicker();
-            	   $('#datetimepicker7').datetimepicker();
-            	   $("#datetimepicker6").on("dp.change", function (e) {
-                	   $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-            	   });
-            	   $("#datetimepicker7").on("dp.change", function (e) {
-                	   $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-            	   });
-        	   });
-            </script>
-
+        <div class="box-header">
+                <h2>Start Planning Your Dream Holiday!</h2>
         </div>
 
-    </section>
+        <form id="destination-form" class="dest-form" autocomplete="off">
+
+            <h4>Where are you headed to?</h4>
+            <input type="text" name="destInput" id="destInput" class="form-control" placeholder="Destination">
+
+            <h4>Start Date</h4>
+            <div class="input-append date form_datetime">
+                <input type="text" name="start-date" id="start-date" class="form-control" placeholder="Start" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <script type="text/javascript">
+                $(".form_datetime").datetimepicker({
+                    format: "dd MM yyyy - hh:ii"
+                });
+            </script>  
+
+            <h4>End Date</h4>
+            <div class="input-append date form_datetime">
+                <input type="text" name="end-date" id="end-date" class="form-control" placeholder="End" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <script type="text/javascript">
+                $(".form_datetime").datetimepicker({
+                    format: "dd MM yyyy - hh:ii"
+                });
+            </script>
+
+            <button type="submit" id="start-planning" class="btn btn-light btn-sm">Begin!</button>
+
+        </form>
+
+    </div>
 
 </template>

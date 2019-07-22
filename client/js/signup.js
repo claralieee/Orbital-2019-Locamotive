@@ -33,7 +33,7 @@ Template.signup.events({
 					Bert.alert(err.reason, "danger", "growl-top-right");
 				} else {
 					Bert.alert("Account Created! You Are Now Logged In!", "success", "growl-top-right");
-					Router.go("/account");
+					Router.go("/profile");
 
 				}
 			});
