@@ -33,10 +33,10 @@
 
 	{{#each userPlans}}
 	<!-- Plan -->
-	<div class="plan">
+	<div class="trip">
 		<div class="row">
 			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
-				<h1 class="plan-title">{{planName}}</h1>
+				<h1 class="trip-title">{{tripName}}</h1>
 				<p class="meta">Author: {{author}}</p>
 				<p class="meta">Posted On: {{date}}</p>
 			</div>
@@ -52,13 +52,13 @@
 			</div>
 		</div>
 
-		<p class="regular plan-desc">"{{planPost}}"</p>
-		<button class="btn btn-sml btn-danger" id="delete-plan">Delete Plan</button>
+		<p class="regular trip-desc">"{{tripPost}}"</p>
+		<button class="btn btn-sml btn-danger" id="delete-trip">Delete Plan</button>
 
 	</div>
 	<!-- End Plan -->
 	{{else}}
-	<h1>no plans to display</h1>
+	<h1>no trips to display</h1>
 	{{/each}}
 
 <!-- Js for switching file picker span -->

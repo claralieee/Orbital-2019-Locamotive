@@ -1,8 +1,8 @@
 Template.search.rendered = function() {
 	$("#search-link").addClass('selected');
 	$("#profile-link").removeClass('selected');
-	$("#build-link").removeClass('selected');
-	$("#plans-link").removeClass('selected');
+	$("#plan-link").removeClass('selected');
+	$("#trips-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 }
 

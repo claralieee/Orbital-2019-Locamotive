@@ -1,12 +1,12 @@
-Template.build.rendered = function() {
-	$("#build-link").addClass('selected');
+Template.plan.rendered = function() {
+	$("#plan-link").addClass('selected');
 	$("#profile-link").removeClass('selected');
-	$("#plans-link").removeClass('selected');
+	$("#trips-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 }
 
-Template.build.onRendered(() => {
+Template.plan.onRendered(() => {
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();

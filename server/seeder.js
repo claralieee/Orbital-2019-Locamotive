@@ -20,9 +20,9 @@ Meteor.startup(function() {
 
       var user0Id = Meteor.users.findOne({username: 'Super User'})._id;
 
-      Plans.insert({
-        planName: "Lame Plan 1",
-        planPost: "This is a very very lame plan",
+      Trips.insert({
+        tripName: "Lame Trip 1",
+        tripPost: "This is a very very lame trip",
         author: "Super User",
         date: date,
         createdAt: new Date(),
@@ -33,7 +33,7 @@ Meteor.startup(function() {
         userId: user0Id,
       });
       console.log("Super User Created");
-      console.log("Super User Plan Created");
+      console.log("Super User Trip Created");
 
       // User 1
       Accounts.createUser({
@@ -49,9 +49,9 @@ Meteor.startup(function() {
 
       var user1Id = Meteor.users.findOne({username: 'User1'})._id;
 
-      Plans.insert({
-        planName: "Funny Plan 1",
-        planPost: "This is a very very Funny plan",
+      Trips.insert({
+        tripName: "Funny Trip 1",
+        tripPost: "This is a very very Funny trip",
         author: "User1",
         date: date,
         createdAt: new Date(),
@@ -62,7 +62,7 @@ Meteor.startup(function() {
         userId: user1Id,
       });
       console.log("User1 Created");
-      console.log("User1 Plan Created");
+      console.log("User1 Trip Created");
 
       // User 2
       Accounts.createUser({
@@ -78,9 +78,9 @@ Meteor.startup(function() {
 
       var user2Id = Meteor.users.findOne({username: 'User2'})._id;
 
-      Plans.insert({
-        planName: "Nasty Plan 1",
-        planPost: "This is a very very Nasty plan",
+      Trips.insert({
+        tripName: "Nasty Trip 1",
+        tripPost: "This is a very very Nasty trip",
         author: "User2",
         date: date,
         createdAt: new Date(),
@@ -91,7 +91,7 @@ Meteor.startup(function() {
         userId: user2Id,
       });
       console.log("User2 Created");
-      console.log("User2 Plan Created");
+      console.log("User2 Trip Created");
 
       // User 3
       Accounts.createUser({
@@ -107,9 +107,9 @@ Meteor.startup(function() {
 
       var user3Id = Meteor.users.findOne({username: 'User3'})._id;
 
-      Plans.insert({
-        planName: "Funny Plan 2",
-        planPost: "This is a very very Funny plan",
+      Trips.insert({
+        tripName: "Funny Trip 2",
+        tripPost: "This is a very very Funny trip",
         author: "User3",
         date: date,
         createdAt: new Date(),
@@ -120,7 +120,7 @@ Meteor.startup(function() {
         userId: user3Id,
       });
       console.log("User3 Created");
-      console.log("User3 Plan Created");
+      console.log("User3 Trip Created");
 
       // User 4
       Accounts.createUser({
@@ -136,9 +136,9 @@ Meteor.startup(function() {
 
       var user4Id = Meteor.users.findOne({username: 'User4'})._id;
 
-      Plans.insert({
-        planName: "Lame Plan 2",
-        planPost: "This is a very very Lame plan",
+      Trips.insert({
+        tripName: "Lame Trip 2",
+        tripPost: "This is a very very Lame trip",
         author: "User4",
         date: date,
         createdAt: new Date(),
@@ -149,7 +149,7 @@ Meteor.startup(function() {
         userId: user4Id,
       });
       console.log("User4 Created");
-      console.log("User4 Plan Created");
+      console.log("User4 Trip Created");
 
       // User 5
       Accounts.createUser({
@@ -165,9 +165,9 @@ Meteor.startup(function() {
 
       var user5Id = Meteor.users.findOne({username: 'User5'})._id;
 
-      Plans.insert({
-        planName: "Nasty Plan 2",
-        planPost: "This is a very very Nasty plan",
+      Trips.insert({
+        tripName: "Nasty Trip 2",
+        tripPost: "This is a very very Nasty trip",
         author: "User5",
         date: date,
         createdAt: new Date(),
@@ -178,7 +178,7 @@ Meteor.startup(function() {
         userId: user5Id,
       });
       console.log("User5 Created");
-      console.log("User5 Plan Created");
+      console.log("User5 Trip Created");
 
       // User 6
       Accounts.createUser({
@@ -194,9 +194,9 @@ Meteor.startup(function() {
 
       var user6Id = Meteor.users.findOne({username: 'User6'})._id;
 
-      Plans.insert({
-        planName: "Funny Plan 3",
-        planPost: "This is a very very Funny plan",
+      Trips.insert({
+        tripName: "Funny Trip 3",
+        tripPost: "This is a very very Funny trip",
         author: "User6",
         date: date,
         createdAt: new Date(),
@@ -207,7 +207,7 @@ Meteor.startup(function() {
         userId: user6Id,
       });
       console.log("User6 Created");
-      console.log("User6 Plan Created");
+      console.log("User6 Trip Created");
 
       // User 7
       Accounts.createUser({
@@ -223,9 +223,9 @@ Meteor.startup(function() {
 
       var user7Id = Meteor.users.findOne({username: 'User7'})._id;
 
-      Plans.insert({
-        planName: "Lame Plan 3",
-        planPost: "This is a very very Lame plan",
+      Trips.insert({
+        tripName: "Lame Trip 3",
+        tripPost: "This is a very very Lame trip",
         author: "User7",
         date: date,
         createdAt: new Date(),
@@ -236,7 +236,7 @@ Meteor.startup(function() {
         userId: user7Id,
       });
       console.log("User7 Created");
-      console.log("User7 Plan Created");
+      console.log("User7 Trip Created");
 
       // User 8
       Accounts.createUser({
@@ -252,9 +252,9 @@ Meteor.startup(function() {
 
       var user8Id = Meteor.users.findOne({username: 'User8'})._id;
 
-      Plans.insert({
-        planName: "Nasty Plan 3",
-        planPost: "This is a very very Nasty plan",
+      Trips.insert({
+        tripName: "Nasty Trip 3",
+        tripPost: "This is a very very Nasty trip",
         author: "User8",
         date: date,
         createdAt: new Date(),
@@ -265,7 +265,7 @@ Meteor.startup(function() {
         userId: user8Id,
       });
       console.log("User8 Created");
-      console.log("User8 Plan Created");
+      console.log("User8 Trip Created");
 
       // User 9
       Accounts.createUser({
@@ -281,9 +281,9 @@ Meteor.startup(function() {
 
       var user9Id = Meteor.users.findOne({username: 'User9'})._id;
 
-      Plans.insert({
-        planName: "Funny Plan 3",
-        planPost: "This is a very very Funny plan",
+      Trips.insert({
+        tripName: "Funny Trip 3",
+        tripPost: "This is a very very Funny trip",
         author: "User9",
         date: date,
         createdAt: new Date(),
@@ -294,7 +294,7 @@ Meteor.startup(function() {
         userId: user9Id,
       });
       console.log("User9 Created");
-      console.log("User9 Plan Created");
+      console.log("User9 Trip Created");
 
       // User 10
       Accounts.createUser({
@@ -310,9 +310,9 @@ Meteor.startup(function() {
 
       var user10Id = Meteor.users.findOne({username: 'User10'})._id;
 
-      Plans.insert({
-        planName: "Nasty Plan 4",
-        planPost: "This is a very very Nasty plan",
+      Trips.insert({
+        tripName: "Nasty Trip 4",
+        tripPost: "This is a very very Nasty trip",
         author: "User10",
         date: date,
         createdAt: new Date(),
@@ -323,11 +323,11 @@ Meteor.startup(function() {
         userId: user10Id,
       });
       console.log("User10 Created");
-      console.log("User10 Plan Created");
+      console.log("User10 Trip Created");
 
       console.log("  ");
       console.log("User Database Seeded! Now get to work! :)");
-      console.log("Plans Database Seeded! Isn't that nice?! :P");
+      console.log("Trips Database Seeded! Isn't that nice?! :P");
 
   }
 

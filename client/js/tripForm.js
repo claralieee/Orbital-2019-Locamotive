@@ -1,19 +1,19 @@
-Template.planForm.rendered = function() {
+Template.tripForm.rendered = function() {
 
 }
 
-Template.planForm.events({
-	"submit .plan-post": function() {
-		var planName = event.target.planName.value;
-		var planPost = event.target.planPost.value;
+Template.tripForm.events({
+	"submit .trip-post": function() {
+		var tripName = event.target.tripName.value;
+		var tripPost = event.target.tripPost.value;
 
-		if (isNotEmpty(planName) &&
-			isNotEmpty(planPost)) {
+		if (isNotEmpty(tripName) &&
+			isNotEmpty(tripPost)) {
 
-			Meteor.call('addJokes', planName, planPost);
+			Meteor.call('addJokes', tripName, tripPost);
 
-			event.target.planName.value = "";
-			event.target.planPost.value = "";
+			event.target.tripName.value = "";
+			event.target.tripPost.value = "";
 
 			Bert.alert("Your Joke Was Posted!", "success", "growl-top-right");
 

@@ -1,0 +1,44 @@
+<template name="tripForm">
+	{{#if currentUser}}
+	<!-- Trip Form-->
+	<div id="tripForm-wrap">
+		<center>
+			<form class="trip-post">
+				{{#each userTrips}}
+				<h2 class="tripForm-heading">Share Your Itinerary</h2>
+				<label for="tripName" class="sr-only">Title</label>
+				<input type="text" name="tripName" id="tripName" class="form-control" placeholder="Title" maxlength="100">
+				<label for="tripPost" class="sr-only">Description</label>
+				<input type="text" name="tripPost" id="tripPost" class="form-control" placeholder="Description">
+
+				
+				<label for="tripSelect">Choose A Trip:</label>			
+				<select id="tripSelect">
+					<option>{{tripName}}</option>
+				</select>
+
+				{{else}}
+				<h1>no trips to publish</h1>
+				<p><a href="/build">Trip</a> your trip here</p>
+				{{/each}}
+
+
+				<!-- Drop down menu -->
+				<button class="btn btn-lg btn-success btn-block" type="submit">Share</button>
+			</form>
+		</center>
+	</div>
+	<!-- End Trip Form-->
+	{{else}}
+	<!-- Trip Form-->
+	<div id="tripForm-wrap">
+		<center>
+			<form class="trip-post">
+				<h2 class="form-signin-heading">Log In To Share Your Itinerary</h2>
+				<a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+			</form>
+		</center>
+	</div>
+	<!-- End Trip Form-->
+	{{/if}}
+</template>

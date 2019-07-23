@@ -1,15 +1,15 @@
 Tracker.autorun(function(){
 	if(Meteor.userId()){
-		Router.go("/plans");
+		Router.go("/trips");
 	}
 });
 
 Template.login.rendered = function() {
 	$("#login-link").addClass('selected');
 	$("#profile-link").removeClass('selected');
-	$("#rankings-link").removeClass('selected');
+	$("#plan-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
-	$("#plans-link").removeClass('selected');
+	$("#trips-link").removeClass('selected');
 }
 
 Template.login.events({
@@ -27,7 +27,7 @@ Template.login.events({
 					Bert.alert(err.reason, "danger", "growl-top-right");
 					return false;
 				} else {
-					Router.go("/plans");
+					Router.go("/trips");
 					Bert.alert("You are now logged in", "success", "growl-top-right");
 				}
 			});
