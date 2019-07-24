@@ -1,23 +1,96 @@
-.start {
-	position: relative;
+.section {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	max-height: 600px;
+	width: 1200px;
 	overflow: hidden;
 }
 
-.start .blob {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 100%;
-	background-position: center center;
+.blobs {
+	max-height: 400px;
+	overflow: hidden;
 }
 
-.start .bg {
-	width: 898.4px;
-	left: 899px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	right: 0;
-	bottom: 0;
 
+.pinkblob {
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.blueblob {
+	position: absolute;
+	top: 100px;
+	right: 250px;
+	margin: 0px 0px -2000px 0px;
+	z-index: 1;
+}
+
+.bg {
+	z-index: 2;
+	width: 567.98px;
+}
+
+.scenery {
+	position: relative;
+	padding: 10px;
+	z-index: 2;
+}
+
+.destinationbox {
+	text-align: center;
+	padding: 10px;
+	font-family: Poppins, Arial, serif;
+}
+
+.box-header {
+	padding: 10px;
+	font-family: Cookie, Helvetica, sans-serif;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+}
+
+.box-header h2 {
+	font-size: 80px;
+}
+
+.dest-form {
+	position: relative;
+	z-index: 2;
+}
+
+.dest-form h4 {
+	font-size: 25px;
+	padding: 10px;
+}
+
+.dest-form input {
+	border: solid #e2c0bb;
+	padding: 10px;
+	height: 40px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#start-planning {
+	text-align: center;
+	padding: 0px 10px;
+	background-color: #e2c0bb;
+}
+
+
+.destinationbox button {
+	font-size: 15px;
+	margin: 40px;
+	height: 40px;
+	width: 200px;
+	font-color: white;
 }
