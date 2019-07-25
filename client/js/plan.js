@@ -37,9 +37,19 @@ Template.plan.onRendered(() => {
             center: 'title',
             right: 'month,agendaWeek,timelineDay'
         },
+        validRange: {
+            start: '2019-07-01',
+            end: '2019-07-10'
+        },
+        defaultDate: '2019-07-01',
+        defaultView: 'agendaWeek',
+        columnHeader: false,
+        aspectRatio: 1.5,
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
-        dragRevertDuration: 0,
+        create: true,
+        eventTextColor: 'white',
+        eventBackgroundColor: getRandomColor(),
         events: [{
             id: 1,
             title: 'Birthday',
@@ -87,5 +97,13 @@ Template.plan.onRendered(() => {
         return false;
 
     }
-
+    
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 });
