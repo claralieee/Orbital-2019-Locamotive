@@ -34,7 +34,8 @@ easy:search
 easysearch:elasticsearch
 easysearch:autosuggest
 momentjs:moment
-fullcalendar:fullcalendar
+scmart:fullcalendar-2
+mizzao:jquery-ui
 
 
 

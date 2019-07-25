@@ -1,69 +1,91 @@
 Template.plan.rendered = function() {
-	$("#plan-link").addClass('selected');
-	$("#profile-link").removeClass('selected');
-	$("#trips-link").removeClass('selected');
-	$("#search-link").removeClass('selected');
-	$("#login-link").removeClass('selected');
 }
+
 
 Template.plan.onRendered(() => {
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    $('#calendarDiv').fullCalendar({
+
+
+    /* initialize the external events
+    -----------------------------------------------------------------*/
+    $('#external-events .fc-event').each(function() {
+
+        // store data so the calendar knows to render an event upon drop
+        $(this).data('event', {
+            title: $.trim($(this).text()), // use the element's text as the event title
+            stick: true // maintain when user navigates (see docs on the renderEvent method)
+        });
+
+        // make the event draggable using jQuery UI
+        $(this).draggable({
+            zIndex: 999,
+            revert: true,      // will cause the event to go back to its
+            revertDuration: 0  //  original position after the drag
+        });
+
+    });
+    
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
+
+    $('#calendar').fullCalendar({
         header: {
-            left: 'basicDay, agendaWeek, month',
+            left: 'prev,next today',
             center: 'title',
-            right: 'today prev,next'
+            right: 'month,agendaWeek,timelineDay'
         },
-        aspectRatio: 4,
-        height: 800,
         editable: true,
-        weekends: true,
+        droppable: true, // this allows things to be dropped onto the calendar
+        dragRevertDuration: 0,
         events: [{
             id: 1,
             title: 'Birthday',
             start: new Date(y, m, 1),
             allDay: true,
             description: 'Happy Birthday',
-        }, {
-            id: 2,
-            title: 'Concert',
-            start: '2016-12-07T21:00:00',
-            end :'2016-12-07T23:00:00',
-            allDay: false,
-            color: '#e74c3c'
-        }, {
-            id: 3,
-            title: 'Lunch',
-            start: new Date(y, m, 16, 14),
-            end: new Date(y, m, 16, 16),
-            allDay: false,
-            color: '#3498db'
-        }, {
-            id: 4,
-            title: 'Class',
-            start: new Date(y, m, 20, 10),
-            allDay: false,
-            color: '#9b59b6'
-        }, {
-            id: 5,
-            title: 'Party',
-            start: new Date(y, m, 5, 18),
-            allDay: false,
-            color: '#e67e22'
         }],
-        dayClick: function(date) {
-            alert("Clicked on " + date.format());
+        drop: function() {
+            // is the "remove after drop" checkbox checked?
+            if ($('#drop-remove').is(':checked')) {
+                // if so, remove the element from the "Draggable Events" list
+                $(this).remove();
+            }
         },
-        eventClick: function(event) {
-            alert("Event title: " + event.title + "\nEvent description: " + event.description + "\nEvent time: " + moment(event.start).format("hh:mm A"));
-        },
-        /*
-        eventMouseover: function(calEvent) {
-            $(this).css('background-color', 'black');
+        
+        eventDragStop: function( event, jsEvent, ui, view ) {
+            
+            if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
+                $('#calendar').fullCalendar('removeEvents', event._id);
+                var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
+                el.draggable({
+                  zIndex: 999,
+                  revert: true, 
+                  revertDuration: 0 
+                });
+                el.data('event', { title: event.title, id :event.id, stick: true });
+            }
         }
-        */
+        
     });
+
+    
+    var isEventOverDiv = function(x, y) {
+
+        var external_events = $( '#external-events' );
+        var offset = external_events.offset();
+        offset.right = external_events.width() + offset.left;
+        offset.bottom = external_events.height() + offset.top;
+
+        // Compare
+        if (x >= offset.left
+            && y >= offset.top
+            && x <= offset.right
+            && y <= offset .bottom) { return true; }
+        return false;
+
+    }
+
 });
