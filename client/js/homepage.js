@@ -12,7 +12,7 @@ Template.homepage.events({
 			isNotEmpty(start) &&
 			isNotEmpty(end)) {
 
-			Meteor.call('startPlan', destination, start, end);
+			//Meteor.call('startPlan', destination, start, end);
 
 			event.target.destination.value = "";
 			event.target.start.value = "";

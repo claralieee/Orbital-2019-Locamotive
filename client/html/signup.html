@@ -6,30 +6,32 @@
 	</div>
 
 	{{else}}
-	<div class="page-content">
+	<div class="signup-content">
 
-		<div class="page-header">
+		<div class="signup-page-header">
 			<h2>Create an Account</h2>
 		</div>
 
 		<div class="actualForm">
 			<form id="signupForm" class="form-signup">
 
-				<label for="username" class="signup-labels">Username</label>
-				<input type="text" name="username" id="username" class="form-control" placeholder="Username" >
+				<div class="signing-up">
+					<label for="username" class="signup-labels">Username</label>
+					<input type="text" name="username" id="username" class="signup-control" placeholder="Username">
 
-				<label for="email" class="signup-labels">Email</label>
-				<input type="email" name="email" id="email" class="form-control" placeholder="Email">
+					<label for="email" class="signup-labels">Email</label>
+					<input type="email" name="email" id="email" class="signup-control" placeholder="Email">
 
-				<label for="password" class="signup-labels">Password</label>
-				<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+					<label for="password" class="signup-labels">Password</label>
+					<input type="password" name="password" id="password" class="signup-control" placeholder="Password">
 
-				<label for="password-confirm" class="signup-labels">Confirm Password</label>
-				<input type="password" name="password-confirm" id="password-confirm" class="form-control" placeholder="Confirm Password">
+					<label for="password-confirm" class="signup-labels">Confirm Password</label>
+					<input type="password" name="password-confirm" id="password-confirm" class="signup-control" placeholder="Confirm Password">
+				</div>
 
 				<!-- buttons need to redirect -->
-				<div class="control-actions">
-					<a class="btn btn-light bth-sm" href="/login" role="button">Cancel</a>
+				<div class="control-signups">
+					<a class="btn btn-light bth-sm" href="/login" role="button" id="cancel-btn">Cancel</a>
 					<button type="submit" id="signup-btn" class="btn btn-light btn-sm">Sign Up</button>
 				</div>
 
