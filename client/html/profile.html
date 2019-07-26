@@ -8,10 +8,16 @@
 
 		{{else}}
 			<img src="avatar.png" class="profile-pic">
-			
-
+			<form class="edit-profile" enctype="multipart/form-data">
+				<label for="profile-picture">Change Profile Picture</label>
+				<span id="filename"></span> 
+				<input type="file" name="profile-picture" id="profile-picture" class="uploaded-pp">
+				<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload Picture</button>
+			</form>
 
 		{{/with}}
+			
+
 	</div>
 
 
