@@ -1,8 +1,8 @@
 <template name="signup">
 
 	{{#if currentUser}}
-	<div class="notice">
-		<h2>You are logged in. Return <a href="/jokes">home</a></h2>
+	<div class="login-notice">
+		<h2>You are logged in. Return <a href="/">home</a></h2>
 	</div>
 
 	{{else}}
@@ -15,7 +15,7 @@
 		<div class="actualForm">
 			<form id="signupForm" class="form-signup">
 
-				<div class="signing-up">
+				<!-- <div class="signing-up"> -->
 					<label for="username" class="signup-labels">Username</label>
 					<input type="text" name="username" id="username" class="signup-control" placeholder="Username">
 
@@ -27,13 +27,13 @@
 
 					<label for="password-confirm" class="signup-labels">Confirm Password</label>
 					<input type="password" name="password-confirm" id="password-confirm" class="signup-control" placeholder="Confirm Password">
-				</div>
+				<!-- </div> -->
 
 				<!-- buttons need to redirect -->
-				<div class="control-signups">
+				<!-- <div class="control-signups"> -->
 					<a class="btn btn-light bth-sm" href="/login" role="button" id="cancel-btn">Cancel</a>
 					<button type="submit" id="signup-btn" class="btn btn-light btn-sm">Sign Up</button>
-				</div>
+				<!-- </div> -->
 
 			</form>
 

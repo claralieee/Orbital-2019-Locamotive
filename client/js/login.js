@@ -1,3 +1,4 @@
+//auto route
 Tracker.autorun(function(){
 	if(Meteor.userId()){
 		Router.go("/plan");
@@ -37,11 +38,12 @@ Template.login.events({
 
 // Validation Rules
 
-// Trim Helper
+//trim helper
 var trimInput = function(val){
 	return val.replace(/^\s*|\s*$/g, "");
 };
 
+//check if field is empty
 var isNotEmpty = function(value){
 	if (value && value !== ''){
 		return true;
@@ -50,7 +52,7 @@ var isNotEmpty = function(value){
 	return false;
 };
 
-// Validate Email
+//validate email
 isEmail = function(value) {
 	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	if(filter.test(value)) {
@@ -60,7 +62,7 @@ isEmail = function(value) {
 	return false;
 };
 
-// Check Password Field
+//check if password is valid
 isValidPassword = function(password){
 	if(password.length <6) {
 		Bert.alert("Password must be at least 6 characters", "danger", "growl-top-right");

@@ -1,8 +1,12 @@
-.notice {
+.login-notice {
 	font-family: Poppins, Arial, serif;
 	text-align: center;
 	font-size: 20px;
 	margin: 0 auto;
+}
+
+.login-notice a {
+	color: #e2c0bb;
 }
 
 .signup-content {
