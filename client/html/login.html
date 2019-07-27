@@ -1,9 +1,9 @@
 <template name="login">
 
 	{{#if currentUser}}
-    <div class="notice">
+    <div class="login-notice">
     	<h2>You are logged in.</h2>
-        <h2>Return <a href="/jokes">home</a>.</h2>
+        <h2>Return <a href="/">home</a>.</h2>
     </div>
 
 	{{else}}
@@ -23,9 +23,9 @@
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password">
 
-                    <div class="control-actions">
+                    <!-- <div class="control-actions"> -->
                         <button type="submit" id="signin-btn" class="btn btn-primary btn-sm">Sign In</button>
-                    </div>
+                    <!-- </div> -->
                 </form>
             </div>
 

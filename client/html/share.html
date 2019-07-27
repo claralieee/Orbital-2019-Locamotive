@@ -11,11 +11,14 @@
 			<label for="title" class="sharing-labels">Title</label>
 			<input type="text" name="title" id="titleBox" class="form-control" placeholder="Title">
 
+			<label for="destination" class="sharing-labels">Destination</label>
+			<input type="text" name="destination" id="destBox" class="form-control" placeholder="Destination">
+
 			<!-- drop down menu (might need to edit/update to link to the database)-->
 			<label for="tripSelect" class="sharing-labels">Choose A Trip:</label>	
 			<select id="tripSelect">
 				<option value="">Choose A Trip...</option>
-				{{#each trip}}
+				{{#each userTrip}}
 					<option value="{{tripName}}">{{tripName}}</option>
 				{{/each}}
 			</select>
@@ -46,7 +49,7 @@
 	</div>
 
 	{{else}}
-	<div id="notice">
+	<div id="login-notice">
 		<h2 class="login-notice">Please <a href="/login">Login</a> to Continue</h2>
 	</div>
 

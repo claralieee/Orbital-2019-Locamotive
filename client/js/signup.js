@@ -8,25 +8,22 @@ Template.signup.events({
 		var username = trimInput(event.target.username.value);
 		var email = trimInput(event.target.email.value);
 		var password = trimInput(event.target.password.value);
-		var password_confirm = trimInput(event.target.password_confirm.value);
+		var password_confirm = trimInput(event.target.password-confirm.value);
 
 		if (isNotEmpty(email) && 
 			isNotEmpty(username) && 
 			isNotEmpty(password) && 
-			isNotEmpty(password_confirm) &&
-			areValidPasswords(password, password_confirm)) {
+			isNotEmpty(password-confirm) &&
+			areValidPasswords(password, password-confirm)) {
 
-			//need to update
+			//need to update profile part
 			Accounts.createUser({
 				username: username,
 				email: email,
 				password: password,
-				/*profile: {
-					laughScore: 0,
-					frownScore: 0,
-					pukeScore: 0,
-					voted: [],
-				}*/
+				profile: {
+					
+				}
 
 			}, function(err){
 				if(err){
@@ -47,12 +44,12 @@ Template.signup.events({
 
 //validation rules
 
-//trim inputs
+//trim helper
 var trimInput = function(val){
 	return val.replace(/^\s*|\s*$/g, "");
 };
 
-//empty field
+//check if field is empty
 var isNotEmpty = function(value){
 	if (value && value !== ''){
 		return true;
@@ -71,7 +68,7 @@ isEmail = function(value) {
 	return false;
 };
 
-//Check Password
+//check if password is valid
 isValidPassword = function(password){
 	if(password.length <6) {
 		Bert.alert("Password Must Be At Least 6 Characters", "danger", "growl-top-right");
@@ -80,7 +77,7 @@ isValidPassword = function(password){
 	return true;
 };
 
-// Match Password
+//check if passwords match
 areValidPasswords = function(password, confirm) {
 	if(!isValidPassword(password)) {
 		return false;
