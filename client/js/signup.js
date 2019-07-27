@@ -21,12 +21,12 @@ Template.signup.events({
 				username: username,
 				email: email,
 				password: password,
-				/*profile: {
+				profile: {
 					laughScore: 0,
 					frownScore: 0,
 					pukeScore: 0,
 					voted: [],
-				}*/
+				}
 
 			}, function(err){
 				if(err){
