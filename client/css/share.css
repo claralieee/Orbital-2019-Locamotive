@@ -1,0 +1,55 @@
+.login-notice {
+	font-family: Poppins, Arial, serif;
+	text-align: center;
+	font-size: 20px;
+	margin: 0 auto;
+}
+
+.login-notice a {
+	color: #e2c0bb;
+}
+
+.sharing-content {
+	font-family: Poppins, Arial, serif;
+	margin: 0 auto;
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+}
+
+.sharingbox-header {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	text-align: center;
+}
+
+.sharingbox-header h2 {
+	font-family: Poppins, Arial, serif;
+	font-size: 40px;
+}
+
+.form-share {
+	font-family: Poppins, Arial, serif;
+	margin: 20px;
+	padding: 10px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border: solid black;
+}
+
+.form-share label {
+	width: 300px;
+	font-size: 18px;
+	padding: 10px;
+}
+
+.form-share input {
+	height: 30px;
+	border: solid #e2c0bb;
+	width: 400px;
+	padding: 10px;
+	margin-top: 10px;
+}

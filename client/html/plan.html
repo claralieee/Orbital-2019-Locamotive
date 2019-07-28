@@ -1,4 +1,46 @@
 <template name="plan">
+
+  <div class="plan-content">
+
+    <div id='calendar'></div>
+
+    <div class="events-content">
+
+      <div class="events-box" id="external-events">
+        <h4 class="events-header">Events</h4>
+
+        <div class="events-list">
+          <input type="text" id="eventSearch" class="eventSearch" placeholder="Search for activities.." title="Type in a activity">
+          <ul id="eventUL">
+            <li class='fc-event'><div>Breakfast</div></li>
+            <li class='fc-event'><div>Lunch</div></li>
+            <li class='fc-event'><div>Dinner</div></li>
+            <li class='fc-event'><div>Chill</div></li>
+            <li class='fc-event'><div>Surf</div></li>
+            <li class='fc-event'><div>Tour</div></li>
+            <li class='fc-event'><div>Drink</div></li>
+            <li class='fc-event'><div>ATV</div></li>
+          </ul>
+        </div>
+
+        <div class="delete-chkbx">
+          <input type='checkbox' id='drop-remove' />
+          <label for='drop-remove'>Delete Event after Drop</label>
+        </div>
+      </div>
+
+      <div id='download-btn'>
+        <button type="button" id="download-btn" class="download-btn">Download</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</template>
+
+<!--
+<template name="plan">
   <body>
   	<div id='wrap'>
         <div id='external-events'>
@@ -28,4 +70,4 @@
     </div>
   </body>
 </template>
-
+-->
