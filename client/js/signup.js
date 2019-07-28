@@ -22,6 +22,7 @@ Template.signup.events({
 				email: email,
 				password: password,
 				profile: {
+
 					votes: 0,
 					voted:[],
 				}

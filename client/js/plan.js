@@ -1,4 +1,5 @@
 Template.plan.rendered = function() {
+
 }
 
 
@@ -43,6 +44,8 @@ Template.plan.onRendered(() => {
         },
         defaultDate: '2019-07-01',
         defaultView: 'agendaWeek',
+        minTime: "06:00",
+        contentHeight: 'auto',
         columnHeader: false,
         aspectRatio: 1.5,
         editable: true,
@@ -80,8 +83,37 @@ Template.plan.onRendered(() => {
         }
         
     });
+    /*
+    html2canvas(document.getElementById('calendar')).then(function(canvas) {
+        document.body.appendChild(canvas);
+    });
+    */
 
-    
+
+    var scaleBy = 5;
+    var w = 1000;
+    var h = 1000;
+    var div = document.querySelector('#screen');
+    var canvas = document.createElement('canvas');
+    canvas.width = w * scaleBy;
+    canvas.height = h * scaleBy;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    var context = canvas.getContext('2d');
+    context.scale(scaleBy, scaleBy);
+
+    html2canvas(document.getElementById('calendar')).then(function(canvas) {
+        theCanvas = canvas;
+        /*
+        document.body.appendChild(canvas);
+        Canvas2Image.saveAsPNG(canvas);
+        $(body).append(canvas);
+        */
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "pretty image.png");
+        });
+    });
+  
     var isEventOverDiv = function(x, y) {
 
         var external_events = $( '#external-events' );

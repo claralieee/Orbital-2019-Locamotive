@@ -36,3 +36,7 @@ easysearch:autosuggest
 momentjs:moment
 fullcalendar:fullcalendar
 mizzao:jquery-ui
+sinocyc:html2canvas
+pfafman:filesaver
+insecure
+autopublish

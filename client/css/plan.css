@@ -7,16 +7,17 @@ body {
         
     #wrap {
         width: 1300px;
-        margin: 0 auto;
+        margin: 20px auto;
     }
         
     #external-events {
-        float: left;
+        float: right;
         width: 180px;
-        padding: 0 10px;
+        padding: 0 5px;
         border: 1px solid #ccc;
         background: #eee;
         text-align: left;
+        margin-right: 30px;
     }
         
     #external-events h4 {
@@ -43,9 +44,10 @@ body {
     }
 
     #calendar {
-        float: right;
+        float: left;
         width: 1000px;
         font-size: 14px;
         background: light;
         text-align: middle;
+        margin-left: 30px;
     }
