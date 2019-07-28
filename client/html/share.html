@@ -1,31 +1,39 @@
 <template name="share">
 
-	{{#if currentUser}}
+	<!-- {{#if currentUser}} -->
 	<div id="sharing-content">
-		<div class="box-header">
-            <h2>Share Your Itineraries</h2>
+
+		<div class="sharingbox-header">
+            <h2>Share Your Itinerary</h2>
         </div>
 
 		<form id="sharingForm" class="form-share">
 
-			<label for="title" class="sharing-labels">Title</label>
+			<label for="title" class="sharing-labels">Title:</label>
 			<input type="text" name="title" id="titleBox" class="form-control" placeholder="Title">
 
-			<label for="destination" class="sharing-labels">Destination</label>
+			<label for="destination" class="sharing-labels">Destination:</label>
 			<input type="text" name="destination" id="destBox" class="form-control" placeholder="Destination">
 
-			<!-- drop down menu (might need to edit/update to link to the database)-->
+			<!-- drop down menu (might need to edit/update to link to the database)
 			<label for="tripSelect" class="sharing-labels">Choose A Trip:</label>	
 			<select id="tripSelect">
 				<option value="">Choose A Trip...</option>
 				{{#each userTrip}}
 					<option value="{{tripName}}">{{tripName}}</option>
 				{{/each}}
-			</select>
+			</select> -->
 
-			<label for="description" class="sharing-labels">Description</label>
+			<div class="upload-btn-wrapper">
+				<label for="upload-trip" class="sharing-labels">Select Itinerary:</label>
+  				<button class="btn">Upload</button>
+  				<input type="file" name="upload-trip" id="upload-trip" class="form-control" />
+			</div>
+
+			<label for="description" class="sharing-labels">Description:</label>
 			<input type="text" name="description" id="descriptionBox" class="form-control" placeholder="Description">
 
+			<!--
 			<div class="tagBox">
 				<div class="tag-header">
 					<h4>
@@ -42,17 +50,19 @@
 				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="nature">Nature</label>
 				<label class="checkbox-inline" id="tag-tag"><input type="checkbox" value="outdoor">Outdoor</label>
 			</div>
+			-->
 
+			<a class="btn btn-light bth-sm" href="/plan" role="button" id="cancel-btn">Cancel</a>
 			<button type="submit" id="publish-trip" class="btn btn-light btn-sm">Share</button>
 			
 		</form>
 	</div>
 
-	{{else}}
+	<!-- {{else}}
 	<div id="login-notice">
 		<h2 class="login-notice">Please <a href="/login">Login</a> to Continue</h2>
 	</div>
 
-	{{/if}}
+	{{/if}} -->
 
 </template>
