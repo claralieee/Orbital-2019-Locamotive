@@ -1,11 +1,8 @@
-body {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 14px;
-        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    }
+.plan-wrap {
+    
+}
         
-    #wrap {
+    #plan-wrap {
         width: 1300px;
         margin: 20px auto;
     }

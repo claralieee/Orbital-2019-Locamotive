@@ -8,39 +8,49 @@
 		<div class="profile-details">
 
 			{{#with UserImages}}
-				<img src="{{image}}" class="profile-pic">
+				<img src="{{image}}" class="profile-avatar">
 
 			{{else}}
-				<img src="avatar.png" class="profile-pic">
+				<img src="avatar.png" class="profile-avatar">
 				<form class="edit-profile" enctype="multipart/form-data">
-					<label for="profile-picture">Change Profile Picture</label>
-					<span id="filename"></span> 
-					<input type="file" name="profile-picture" id="profile-picture" class="uploaded-pp">
-					<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload Picture</button>
+					<div class="upload-btn-wrapper">
+  						<button class="select-pic-btn">Select Photo</button>
+  						<input type="file" name="myfile" />
+					</div>
+					<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload</button>
 				</form>
 			{{/with}}
 
-			<h4 class="profile-display">Username: {{username}}</h4>
-			<h4 class="profile-display">Email: {{email}}</h4>
+			<h4 class="profile-display" id="profile-headers">Username:</h4>
+			<h4 class="profile-display" id="profile-details">{{username}}</h4>
+			<h4 class="profile-display" id="profile-headers">Email:</h4>
+			<h4 class="profile-display" id="profile-details">{{email}}</h4>
 
 		</div>
 
-		{{#each userTrips}}
+		
+		<div class="profile-content">
+			{{#each userTrips}}
 			<div class="trip-content">
-				<h4 class="saved-title">Title: {{tripName}}</h4>
-				<h5 class="saved-dest">Destination: {{tripDestination}}</h5>
-				<h5 class="saved-date">Date Last Saved: {{date}}</h5>
+				<span class="user-trip-details" id="saved-title">Title: {{tripName}}</span>
+				<span class="user-trip-details" id="saved-dest">Destination: {{tripDestination}}</span>
+				<span class="user-trip-details" id="saved-date">Date Posted: {{date}}</span>
+				<span class="user-trip-details" id="upvotes-count">{{userUpvotes}}</span>
+
+				<a class="btn btn-light bth-sm" role="button" id="view-post-btn">View</a>
+
 				<button type="button" class="btn btn-default btn-lg" id="delete-btn">
-  					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+  					<span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash-icon"></span>
 				</button>
 			</div>
 
-		{{else}}
-			<div class="trip-content">
-				<h2>You Currently Have No Saved Trips. Start <a href="/">Planning</a>!</h2>
+			{{else}}
+			<div class="trip-content" id="no-trips-notice">
+				<h2 class="nt-notice">You Currently Have No Saved Trips. Start <a href="/">Planning</a>!</h2>
 			</div>
 
 		{{/each}}
+		</div>
 
 	</div>
 	{{/if}}

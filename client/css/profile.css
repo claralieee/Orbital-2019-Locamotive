@@ -1,0 +1,137 @@
+.profile-page {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	font-family: Poppins, Arial, serif;
+	text-align: center;
+}
+
+.profile-details {
+	background-color: #f5f5f5;
+	height: 425px;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+}
+
+.profile-avatar {
+	height: 85px;
+	width: 85px;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.edit-profile label {
+	text-align: center;
+	font-size: 12px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.select-pic-btn {
+  border: solid white;
+  background-color: #abb5c4;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#profilepic-btn {
+	border: solid white;
+	background-color: #e2c0bb;
+	padding: 4px;
+	font-size: 12px;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	color: white;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+
+.profile-display h4 {
+	font-size: 18px;
+	margin: 4px;
+}
+
+#profile-details {
+	font-family: Cookie, Helvetica, sans-serif;
+	font-size: 22px;
+	margin: 4px;
+} 
+
+#profile-headers {
+	margin-top: 10px;
+}
+
+
+.profile-content {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	height: 425px;
+	overflow: scroll;
+}
+
+.trip-content {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	background-color: #f5f5f5;
+	margin-bottom: 35px;
+}
+
+.trip-content span {
+	font-size: 16px;
+	margin: 10px;
+	padding: 5px;
+}
+
+#trash-icon {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+}
+
+#delete-btn {
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	background-color: #abb5c4;
+	margin: 10px;
+}
+
+#view-post-btn {
+	font-size: 12px;
+	height: 35px;
+	width: 60px;
+	background-color: #e2c0bb;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 6px;
+	border-radius: 4px; 
+	margin: 10px;
+	color: white;
+}
+
+.trip-content a {
+	color: #e2c0bb
+}

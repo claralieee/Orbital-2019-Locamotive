@@ -13,7 +13,7 @@ Template.share.events({
 			isNotEmpty(desc) &&
 			isNotEmpty(selected)) {
 
-			Meteor.call('publishPlan', title, selected, desc);
+			Meteor.call('publishTrip', title, selected, desc);
 
 			event.target.title.value = "";
 			event.target.desc.value = "";

@@ -28,6 +28,10 @@ Template.profile.helpers({
 		var userTrips = Trips.find({userId: userId}, {sort: {createdAt: -1}});
 		return userTrips;
 	},
+
+	userUpvotes: function() {
+		return Meteor.user().profile.votes;
+	},
 })
 
 Template.profile.events({
@@ -36,5 +40,5 @@ Template.profile.events({
 		Meteor.call("deleteTrip", this._id);
 		Bert.alert("Your Plan Was Deleted", "success", "growl-top-right")
 	},
-	
+
 })
