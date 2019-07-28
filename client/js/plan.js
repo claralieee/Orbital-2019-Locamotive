@@ -2,7 +2,34 @@ Template.plan.rendered = function() {
 
 }
 
+Template.plan.events({
+    "click .download-btn": function(event) {
+        var scaleBy = 5;
+        var w = 1000;
+        var h = 1000;
+        var div = document.querySelector('#screen');
+        var canvas = document.createElement('canvas');
+        canvas.width = w * scaleBy;
+        canvas.height = h * scaleBy;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        var context = canvas.getContext('2d');
+        context.scale(scaleBy, scaleBy);
 
+        html2canvas(document.getElementById('calendar')).then(function(canvas) {
+            theCanvas = canvas;
+            /*
+            document.body.appendChild(canvas);
+            Canvas2Image.saveAsPNG(canvas);
+            $(body).append(canvas);
+            */
+            canvas.toBlob(function(blob) {
+                saveAs(blob, "pretty image.png");
+            });
+        });
+        return false;
+    }
+});
 Template.plan.onRendered(() => {
     var date = new Date();
     var d = date.getDate();
@@ -52,7 +79,7 @@ Template.plan.onRendered(() => {
         droppable: true, // this allows things to be dropped onto the calendar
         create: true,
         eventTextColor: 'white',
-        eventBackgroundColor: getRandomColor(),
+        //eventBackgroundColor: getRandomColor(),
         events: [{
             id: 1,
             title: 'Birthday',
@@ -69,7 +96,6 @@ Template.plan.onRendered(() => {
         },
         
         eventDragStop: function( event, jsEvent, ui, view ) {
-            
             if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
                 $('#calendar').fullCalendar('removeEvents', event._id);
                 var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
@@ -88,31 +114,6 @@ Template.plan.onRendered(() => {
         document.body.appendChild(canvas);
     });
     */
-
-
-    var scaleBy = 5;
-    var w = 1000;
-    var h = 1000;
-    var div = document.querySelector('#screen');
-    var canvas = document.createElement('canvas');
-    canvas.width = w * scaleBy;
-    canvas.height = h * scaleBy;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    var context = canvas.getContext('2d');
-    context.scale(scaleBy, scaleBy);
-
-    html2canvas(document.getElementById('calendar')).then(function(canvas) {
-        theCanvas = canvas;
-        /*
-        document.body.appendChild(canvas);
-        Canvas2Image.saveAsPNG(canvas);
-        $(body).append(canvas);
-        */
-        canvas.toBlob(function(blob) {
-            saveAs(blob, "pretty image.png");
-        });
-    });
   
     var isEventOverDiv = function(x, y) {
 
