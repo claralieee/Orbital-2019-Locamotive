@@ -21,7 +21,6 @@
 	margin-bottom: 15px;
 }
 
-
 .edit-profile label {
 	text-align: center;
 	font-size: 12px;
@@ -81,6 +80,58 @@
 	margin-top: 10px;
 }
 
+
 .profile-content {
-	border: solid black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	height: 425px;
+	overflow: scroll;
+}
+
+.trip-content {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	background-color: #f5f5f5;
+	margin-bottom: 35px;
+}
+
+.trip-content span {
+	font-size: 16px;
+	margin: 10px;
+	padding: 5px;
+}
+
+#trash-icon {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+}
+
+#delete-btn {
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	background-color: #abb5c4;
+	margin: 10px;
+}
+
+#view-post-btn {
+	font-size: 12px;
+	height: 35px;
+	width: 60px;
+	background-color: #e2c0bb;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 6px;
+	border-radius: 4px; 
+	margin: 10px;
+	color: white;
+}
+
+.trip-content a {
+	color: #e2c0bb
 }

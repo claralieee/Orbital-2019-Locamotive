@@ -1,16 +1,16 @@
 <template name="profile">
  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<!--{{#if currentUser}} -->
+	{{#if currentUser}}
 
 	<div class="profile-page">
 
 		<div class="profile-details">
 
-			<!-- {{#with UserImages}}
+			{{#with UserImages}}
 				<img src="{{image}}" class="profile-avatar">
 
-			{{else}} -->
+			{{else}}
 				<img src="avatar.png" class="profile-avatar">
 				<form class="edit-profile" enctype="multipart/form-data">
 					<div class="upload-btn-wrapper">
@@ -19,7 +19,7 @@
 					</div>
 					<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload</button>
 				</form>
-			<!-- {{/with}} -->
+			{{/with}}
 
 			<h4 class="profile-display" id="profile-headers">Username:</h4>
 			<h4 class="profile-display" id="profile-details">{{username}}</h4>
@@ -28,27 +28,30 @@
 
 		</div>
 
-		<!-- {{#each userTrips}} -->
-			<div class="profile-content">
-				<h4 class="user-trip-details" id="saved-title">Title: {{tripName}}</h4>
-				<h4 class="user-trip-details" id="saved-dest">Destination: {{tripDestination}}</h4>
-				<h4 class="user-trip-details" id="saved-date">Date Posted: {{date}}</h4>
-				<h4 class="user-trip-details" id="upvotes-count">{{userUpvotes}}</h4>
+		
+		<div class="profile-content">
+			{{#each userTrips}}
+			<div class="trip-content">
+				<span class="user-trip-details" id="saved-title">Title: {{tripName}}</span>
+				<span class="user-trip-details" id="saved-dest">Destination: {{tripDestination}}</span>
+				<span class="user-trip-details" id="saved-date">Date Posted: {{date}}</span>
+				<span class="user-trip-details" id="upvotes-count">{{userUpvotes}}</span>
 
 				<a class="btn btn-light bth-sm" role="button" id="view-post-btn">View</a>
 
 				<button type="button" class="btn btn-default btn-lg" id="delete-btn">
-  					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+  					<span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash-icon"></span>
 				</button>
 			</div>
 
-		<!-- {{else}}
-			<div class="trip-content">
-				<h2>You Currently Have No Saved Trips. Start <a href="/">Planning</a>!</h2>
+			{{else}}
+			<div class="trip-content" id="no-trips-notice">
+				<h2 class="nt-notice">You Currently Have No Saved Trips. Start <a href="/">Planning</a>!</h2>
 			</div>
 
-		{{/each}} -->
+		{{/each}}
+		</div>
 
 	</div>
-	<!-- {{/if}} -->
+	{{/if}}
 </template>

@@ -1,34 +1,35 @@
 <template name="plan">
-  <body>
-  	<div id='wrap'>
-        <div id='external-events'>
-          <p>
-            <strong>Draggable Events</strong>
-          </p>
-          <div class='fc-event'>My Event 1</div>
-          <div class='fc-event'>My Event 2</div>
-          <div class='fc-event'>My Event 3</div>
-          <div class='fc-event'>My Event 4</div>
-          <div class='fc-event'>My Event 5</div>
-          <p>
-            <input type='checkbox' id='drop-remove' />
-            <label for='drop-remove'>remove after drop</label>
-          </p>
-        </div>
-        <div id='download-btn'>
-          <button type="button" id="download-btn" class="download-btn">Download</button>
-        </div>
-      <div id='calendar'></div>
+
+  <div id='plan-wrap'>
+
+    <div id='calendar'></div>
+
+    <div class="events-box">
+
+      <div id='external-events'>
+        <p class="events-header">
+          Draggable Events
+        </p>
+
+        <div class='fc-event'>My Event 1</div>
+        <div class='fc-event'>My Event 2</div>
+        <div class='fc-event'>My Event 3</div>
+        <div class='fc-event'>My Event 4</div>
+        <div class='fc-event'>My Event 5</div>
+        
+        <p>
+          <input type='checkbox' id='drop-remove' />
+          <label for='drop-remove'>Remove Event After Drop</label>
+        </p>
+
+      </div>
+        
+      <div id='download-btn'>
+        <button type="button" id="download-btn" class="download-btn">Download</button>
+      </div>
+
     </div>
-  </body>
+    
+  </div>
+
 </template>
-
-
-
-
-
-
-
-
-
-
