@@ -8,13 +8,13 @@ Template.signup.events({
 		var username = trimInput(event.target.username.value);
 		var email = trimInput(event.target.email.value);
 		var password = trimInput(event.target.password.value);
-		var password_confirm = trimInput(event.target.password-confirm.value);
+		var password2 = trimInput(event.target.password2.value);
 
 		if (isNotEmpty(email) && 
 			isNotEmpty(username) && 
 			isNotEmpty(password) && 
-			isNotEmpty(password-confirm) &&
-			areValidPasswords(password, password-confirm)) {
+			isNotEmpty(password2) &&
+			areValidPasswords(password, password2)) {
 
 			//need to update profile part
 			Accounts.createUser({

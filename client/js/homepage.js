@@ -19,7 +19,7 @@ Template.homepage.events({
 			event.target.startDate.value = "";
 			event.target.endDate.value = "";
 
-			Router.go("/plan");
+			setTimeout(function(){Router.go("/plan");}, 500);
 			Bert.alert("Start Planning!", "success", "growl-top-right");
 
 		} else {
