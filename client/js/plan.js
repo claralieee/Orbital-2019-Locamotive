@@ -30,12 +30,8 @@ Template.plan.events({
         return false;
     }
 });
-Template.plan.onRendered(() => {
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
 
+Template.plan.onRendered(() => {
 
     /* initialize the external events
     -----------------------------------------------------------------*/
@@ -58,6 +54,14 @@ Template.plan.onRendered(() => {
     
     /* initialize the calendar
     -----------------------------------------------------------------*/
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var Data = PlannerData.findOne({}, { sort: { createdAt: -1 }}, { limit: 1});
+    var startDate = new Date(Data.startDate); 
+    var Day = startDate.getDay();
+
 
     $('#calendar').fullCalendar({
         header: {
@@ -69,7 +73,8 @@ Template.plan.onRendered(() => {
             start: '2019-07-01',
             end: '2019-07-10'
         },
-        defaultDate: '2019-07-01',
+        //defaultDate: '2019-07-01',
+        defaultDate: startDate,
         defaultView: 'agendaWeek',
         minTime: "06:00",
         contentHeight: 'auto',
@@ -79,6 +84,8 @@ Template.plan.onRendered(() => {
         droppable: true, // this allows things to be dropped onto the calendar
         create: true,
         eventTextColor: 'white',
+        allDaySlot: false,
+        firstDay: Day,
         //eventBackgroundColor: getRandomColor(),
         events: [{
             id: 1,

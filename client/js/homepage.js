@@ -4,19 +4,20 @@ Template.homepage.rendered = function() {
 
 Template.homepage.events({
 	"submit .dest-form": function() {
-		var destination = event.target.destInput.value;
-		var start = event.target.start-date.value;
-		var end = event.target.end-date.value;
+		var destInput = event.target.destInput.value;
+		var startDate = event.target.startDate.value;
+		var endDate = event.target.endDate.value;
 
-		if (isNotEmpty(destination) &&
-			isNotEmpty(start) &&
-			isNotEmpty(end)) {
+		if (isNotEmpty(destInput) &&
+			isNotEmpty(startDate) &&
+			isNotEmpty(endDate)) {
 
-			//Meteor.call('startPlan', destination, start, end);
+			//Meteor.call('startPlan', destInput, startDate, endDate);
+			Meteor.call('passPlannerData', destInput, startDate, endDate);
 
-			event.target.destination.value = "";
-			event.target.start.value = "";
-			event.target.end.value = "";
+			event.target.destInput.value = "";
+			event.target.startDate.value = "";
+			event.target.endDate.value = "";
 
 			Router.go("/plan");
 			Bert.alert("Start Planning!", "success", "growl-top-right");
