@@ -28,7 +28,26 @@ Template.plan.events({
             });
         });
         return false;
+    },
+
+    "keyup .eventSearch": function(event) {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('eventSearch');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("eventUL");
+        li = ul.getElementsByTagName('li');
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("div")[0];
+            txtValue = a.textContent;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+        return false;
     }
+
 });
 
 Template.plan.onRendered(() => {
@@ -105,7 +124,7 @@ Template.plan.onRendered(() => {
         eventDragStop: function( event, jsEvent, ui, view ) {
             if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
                 $('#calendar').fullCalendar('removeEvents', event._id);
-                var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
+                var el = $( "<li class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
                 el.draggable({
                   zIndex: 999,
                   revert: true, 
@@ -116,11 +135,6 @@ Template.plan.onRendered(() => {
         }
         
     });
-    /*
-    html2canvas(document.getElementById('calendar')).then(function(canvas) {
-        document.body.appendChild(canvas);
-    });
-    */
   
     var isEventOverDiv = function(x, y) {
 

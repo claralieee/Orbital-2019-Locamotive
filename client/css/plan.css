@@ -13,7 +13,7 @@
         padding: 0 5px;
         border: 1px solid #ccc;
         background: #eee;
-        text-align: left;
+        text-align: middle;
         margin-right: 30px;
     }
         
@@ -27,6 +27,7 @@
         margin: 10px 0;
         cursor: pointer;
         font-size: 14px;
+        text-align: middle;
     }
         
     #external-events p {
@@ -50,8 +51,5 @@
     }
 
     #download-btn {
-        float: right;
-        width: 50px;
-        align-self: middle;
-        bottom: 100px;
+        
     }
