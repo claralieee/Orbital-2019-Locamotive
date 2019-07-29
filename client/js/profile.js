@@ -75,5 +75,13 @@ Template.profile.events({
 		}
 
 		return false // prevent submit
-	}
+	},
+	'click #view-post-btn': function (e) {
+        var imgPath = $(e.currentTarget).data('image');
+        if (imgPath) {
+            sImageBox.open(imgPath, {
+                animation: 'zoomIn'
+            });
+        }
+    }
 });
