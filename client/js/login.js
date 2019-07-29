@@ -1,7 +1,7 @@
 //auto route
 Tracker.autorun(function(){
 	if(Meteor.userId()){
-		Router.go("/plan");
+		//Router.go("/plan");
 	}
 });
 
