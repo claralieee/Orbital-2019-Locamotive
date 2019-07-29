@@ -7,19 +7,18 @@ Template.share.events({
 		var title = event.target.title.value;
 		var destination = event.target.destination.value;
 		//change variable, check how to upload the image
-		var selected = event.target.tripSelect.value;
-		var desc = event.target.description.value;
+		//var selected = event.target.tripSelect.value;
+		var description = event.target.description.value;
 
 		if (isNotEmpty(title) &&
 			isNotEmpty(destination) &&
-			isNotEmpty(selected) &&
-			isNotEmpty(desc)) {
+			isNotEmpty(description)) {
 
-			Meteor.call('publishTrip', title, selected, desc);
+			Meteor.call('publishTrip', title, destination, description);
 
 			event.target.title.value = "";
-			event.target.desc.value = "";
-			event.target.selected.value = "";
+			event.target.description.value = "";
+			event.target.destination.value = "";
 
 			Bert.alert("Your Plan was Shared!", "success", "growl-top-right");
 
@@ -30,7 +29,7 @@ Template.share.events({
 		}
 
 		return false; // prevent submit
-		
+
 	}
 });
 
