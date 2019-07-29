@@ -32,6 +32,13 @@ Template.profile.helpers({
 	userUpvotes: function() {
 		return Meteor.user().profile.votes;
 	},
+
+	userImages: function() {
+		var username = Meteor.user().username;
+		var userId = Meteor.userId();
+		var url = UserImages.findOne({username: username}, {userId: userId});
+		return url;
+	}
 });
 
 Template.profile.events({
@@ -42,7 +49,7 @@ Template.profile.events({
 	},
 
 	"submit .edit-profile": function(event) {
-		var file = $('#profileImages').get(0).files[0];
+		var file = $('#profileImage').get(0).files[0];
 
 		if (file) {
 
@@ -61,7 +68,7 @@ Template.profile.events({
 						image: imageLoc,
 					});
 
-					Bert.alert("Profile Update Successful!", "success", "growl-top-right");
+					Bert.alert("Profile Picture Successfully Changed!", "success", "growl-top-right");
 				}
 			});
 
