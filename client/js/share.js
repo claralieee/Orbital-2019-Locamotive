@@ -4,24 +4,50 @@ Template.share.rendered = function() {
 
 Template.share.events({
 	"submit .form-share": function() {
-		var title = event.target.title.value;
-		var destination = event.target.destination.value;
-		//change variable, check how to upload the image
-		//var selected = event.target.tripSelect.value;
-		var description = event.target.description.value;
+		var tripTitle = event.target.title.value;
+		var tripDestination = event.target.destination.value;
+		var tripDescription = event.target.description.value;
+		var tripFile = $('#selectTrip').get(0).files[0];
 
-		if (isNotEmpty(title) &&
-			isNotEmpty(destination) &&
-			isNotEmpty(description)) {
-
-			Meteor.call('publishTrip', title, destination, description);
-
+		if (isNotEmpty(tripTitle) && isNotEmpty(tripDestination) && isNotEmpty(tripDescription)) {
+			if (!Meteor.userId()) {
+					throw new Meteor.Error('not authorised');
+					return false;
+			} else {
+				var username = Meteor.user().username;
+				var year = new Date().getFullYear();
+				var month = new Date().getMonth() + 1;
+				var day = new Date().getDate();
+				var date = (month + "/" + day + "/" + year).toString();
+				if (tripFile) {
+					fsFile = new FS.File(tripFile);
+					TripImages.insert(fsFile, function(err, result){
+						if (err) {
+							throw new Meteor.Error(err);
+						} 
+						else {
+							var imageLoc = '/cfs/files/TripImages/'+result._id;		
+							Trips.insert({
+								tripTitle: tripTitle,
+								tripDestination: tripDestination,
+								tripDescription: tripDescription,
+								author: username,
+								date: date,
+								createdAt: new Date(),
+								voteScore: 0,
+								voted: [username],
+								userId: Meteor.userId(),
+								author: Meteor.user().username,
+								tripImage: imageLoc,
+							});
+							Bert.alert("Successfully Uploaded", "success", "growl-top-right");
+						}
+					});
+				}
+			}
 			event.target.title.value = "";
 			event.target.description.value = "";
 			event.target.destination.value = "";
-
-			Bert.alert("Your Plan was Shared!", "success", "growl-top-right");
-
 		} else {
 
 			Bert.alert("Something Went Wrong", "danger", "growl-top-right");
@@ -30,7 +56,7 @@ Template.share.events({
 
 		return false; // prevent submit
 
-	}
+	},
 });
 
 // validation rules

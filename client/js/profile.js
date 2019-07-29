@@ -65,7 +65,7 @@ Template.profile.events({
 					UserImages.insert({
 						userId: Meteor.userId(),
 						username: Meteor.user().username,
-						image: imageLoc,
+						userImage: imageLoc,
 					});
 
 					Bert.alert("Profile Picture Successfully Changed!", "success", "growl-top-right");
