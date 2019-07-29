@@ -7,7 +7,7 @@
 
 		<div class="profile-info">
 
-			{{#with UserImages}}
+			{{#with userImages}}
 				<img src="{{image}}" class="profile-img">
 
 			{{else}}
@@ -15,7 +15,8 @@
 				<form class="edit-profile" enctype="multipart/form-data">
 					<div class="upload-btn-wrapper">
   						<button class="select-pic-btn">Select Photo</button>
-  						<input type="file" name="profileImages" id="profileImages">
+  						<span id="filename"></span>
+  						<input type="file" name="profileImage" id="profileImage">
 					</div>
 					<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload</button>
 				</form>
@@ -53,5 +54,17 @@
 		</div>
 
 	</div>
+
+	<!-- to switch file picker span -->
+	<script type="text/javascript">
+		$(function() {
+			$("#profileImage:file").change(function () {
+				var fileName = $(this).val();
+				$("span").text(fileName);
+				$("label").hide();
+			});
+		});
+	</script>
+
 	{{/if}}
 </template>
