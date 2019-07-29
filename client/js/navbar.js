@@ -3,7 +3,7 @@ Template.navbar.rendered = function(){
 }
 
 Template.navbar.events({
-	"click .logout-btn": function(event){
+	"click #logout-btn": function(event){
 		
 		Meteor.logout(function(err){
 			
