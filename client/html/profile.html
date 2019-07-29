@@ -38,11 +38,13 @@
 				<span class="user-trip-details" id="saved-date">Date Posted: {{date}}</span>
 				<span class="user-trip-details" id="upvotes-count">No. of Upvotes: {{voteScore}}</span>
 
-				<a class="btn btn-light bth-sm" data-image="{{tripImage}}" role="button" id="view-post-btn">View</a>
+				<div>
+					<a class="btn btn-light bth-sm" data-image="{{tripImage}}" role="button" id="view-post-btn">View</a>
 
-				<button type="button" class="btn btn-default btn-lg" id="delete-btn">
-  					<span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash-icon"></span>
-				</button>
+					<button type="button" class="btn btn-default btn-lg" id="delete-btn">
+  						<span class="glyphicon glyphicon-trash" aria-hidden="true" id="trash-icon"></span>
+					</button>
+				</div>
 			</div>
 
 			{{else}}
