@@ -18,23 +18,23 @@
  We also aim to provide a platform where people can share the itineraries created on our site. Travellers who do not have the time are able to access one easily, without having to go through the trouble of planning one themselves or visiting multiple different websites.
 
 ## Features
--Basic Website UI
--Homepage with a background photo of travel destinations
--Form to input destination, start date and end date
--Category Selection
--Destination and date input first
--Activity filter in the actual planner
--Take into account the operating hours of the activity (future updates)
--Itinerary Planner
--Drag and drop activities into a timetable (modular system)
--Day by day (each page has a maximum of 5 days) 
--Browsing Page
--To view itineraries created by other users
--Voting system for itineraries (upvotes)
--Share the itinerary you’ve created
--To publish created itinerary
--Accounts
--Profile page displaying the itineraries the user has published
+1. Basic Website UI
+2. Homepage with a background photo of travel destinations
+3. Form to input destination, start date and end date
+4. Category Selection
+5. Destination and date input first
+6. Activity filter in the actual planner
+7. Take into account the operating hours of the activity (future updates)
+8. Itinerary Planner
+9. Drag and drop activities into a timetable (modular system)
+10. Day by day (each page has a maximum of 5 days) 
+11. Browsing Page
+12. To view itineraries created by other users
+13. Voting system for itineraries (upvotes)
+14. Share the itinerary you’ve created
+15. To publish created itinerary
+16. Accounts
+17. Profile page displaying the itineraries the user has published
 
 
 
