@@ -1,7 +1,38 @@
-<template name="trips">
+<!-- <template name="trips">
 	
 	{{#each trips}}
-	<!-- Plan -->
+	Plan
+	<div class="trip-box">
+
+		<div class="posted-trip-headers" id="info">
+			<span class="post-details" id="post-title">{{tripName}}test</span>
+			<span class="post-details" id="post-author">Author: {{author}}</span>
+			<span class="post-details" id="post-date">Author: {{date}}</span>
+		</div>
+
+		<div class="voting-btn" id="vote">
+			<img src="upvote.png" class="arrow" id="upvote">
+		</div>
+
+		<div class="voting-score" id="score">
+			<h2 class="count red block">{{voteScore}}</h2>
+		</div>
+
+		<div class="regular trip-desc">"{{tripPost}}"</div>
+
+	</div>
+
+	End Plan
+	{{else}}
+	<h1>no trips to display</h1>
+	{{/each}} -->
+
+<!-- </template>  -->
+
+<template name="trips">
+	
+	<!-- {{#each trips}}
+	 Plan -->
 	<div class="trip">
 		<div class="row">
 			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
@@ -10,23 +41,19 @@
 				<p class="meta">Posted On: {{date}}</p>
 			</div>
 			<div class=".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0" id="vote">
-				<img src="laugh.png" class="smiley" id="laugh">
-				<img src="frown.png" class="smiley" id="frown">
-				<img src="puke.png" class="smiley" id="puke">
+				<img src="upvote.png" class="arrow" id="upvote">
 			</div>
 			<div class="row" id="score">
-				<h3 class="count red block">{{laughScore}}</h3>
-				<h3 class="count yellow block">{{frownScore}}</h3>
-				<h3 class="count green block">{{pukeScore}}</h3>
+				<h3 class="count red block">{{voteScore}}</h3>
 			</div>
 		</div>
 
 		<p class="regular trip-desc">"{{tripPost}}"</p>
 
 	</div>
-	<!-- End Plan -->
+	<!-- End Plan
 	{{else}}
 	<h1>no trips to display</h1>
-	{{/each}}
+	{{/each}} -->
 
 </template>

@@ -7,15 +7,15 @@
 
 		<div class="profile-info">
 
-			{{#with UserImages}} 
-				<img src="{{image}}" class="profile-avatar">
+			{{#with UserImages}}
+				<img src="{{image}}" class="profile-img">
 
 			{{else}}
-				<img src="avatar.png" class="profile-avatar">
+				<img src="avatar.png" class="profile-img">
 				<form class="edit-profile" enctype="multipart/form-data">
 					<div class="upload-btn-wrapper">
   						<button class="select-pic-btn">Select Photo</button>
-  						<input type="file" name="myfile" />
+  						<input type="file" name="profileImages" id="profileImages">
 					</div>
 					<button type="submit" value="Upload Photo" id="profilepic-btn" class="btn btn-primary btn-sm">Upload</button>
 				</form>
@@ -35,7 +35,7 @@
 				<span class="user-trip-details" id="saved-title">Title: {{tripName}}</span>
 				<span class="user-trip-details" id="saved-dest">Destination: {{tripDestination}}</span>
 				<span class="user-trip-details" id="saved-date">Date Posted: {{date}}</span>
-				<span class="user-trip-details" id="upvotes-count">No. of Upvotes: {{userUpvotes}}</span>
+				<span class="user-trip-details" id="upvotes-count">No. of Upvotes: {{voteScore}}</span>
 
 				<a class="btn btn-light bth-sm" role="button" id="view-post-btn">View</a>
 
