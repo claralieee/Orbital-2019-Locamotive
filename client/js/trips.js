@@ -34,7 +34,7 @@ Template.trips.events({
 		}
 	},
 
-    'click .js-open-popup': function (e) {
+    'click #view-post-btn': function (e) {
         var imgPath = $(e.currentTarget).data('image');
         if (imgPath) {
             sImageBox.open(imgPath, {
