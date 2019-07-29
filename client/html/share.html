@@ -25,9 +25,10 @@
 			</select> -->
 
 			<div class="upload-btn-wrapper">
-				<label for="upload-trip" class="sharing-labels">Select Itinerary:</label>
-  				<button class="upload-trip-btn">Select Trip</button>
+				<label for="upload-trip" class="sharing-labels">Select Trip:</label>
+  				<button class="upload-trip-btn">Upload</button>
   				<input type="file" name="selectTrip" id="selectTrip"/>
+  				<span id="trip-filename"></span>
 			</div>
 
 			<div>
@@ -64,6 +65,16 @@
 	<div id="login-notice">
 		<h2 class="login-notice">Please <a href="/login">Login</a> to Continue</h2>
 	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#selectTrip:file").change(function () {
+				var fileName = $(this).val();
+				$("span").text(fileName);
+				$("label").hide();
+			});
+		});
+	</script>
 
 	{{/if}}
 

@@ -1,4 +1,4 @@
-#empty-notice {
+.empty-notice {
 	font-family: Poppins, Arial, serif;
 	text-align: center;
 	font-size: 20px;
@@ -17,18 +17,30 @@
 	font-size: 18px;
 	background-color: #f5f5f5;
 	width: 1200px;
-	padding: 10px;
+	padding: 4px;
 	margin-bottom: 35px;
+	height: 70px;
 }
 
 .trip-box:hover {
-	background-color: #e2c0bb;
+	background-color: #abb5c4;
 }
 
 .trip-box span {
 	font-size: 16px;
 	margin: 10px;
 	padding: 5px;
+}
+
+.js-open-popup {
+	font-size: 13px;
+	margin: 20px;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	background-color: #e2c0bb; 
+	border: solid white;
+	color: white;
 }
 
 .arrow {
