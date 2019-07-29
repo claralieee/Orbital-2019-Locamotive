@@ -31,13 +31,11 @@
 
 .form-share {
 	font-family: Poppins, Arial, serif;
-	margin: 20px;
-	padding: 10px;
+	padding: 5px;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	border: solid black;
 }
 
 .form-share label {
@@ -51,5 +49,60 @@
 	border: solid #e2c0bb;
 	width: 400px;
 	padding: 10px;
-	margin-top: 10px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+#descriptionBox {
+	height: 70px;
+	width: 400px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-trip-btn {
+  border: solid white;
+  background-color: #e2c0bb;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  color: white;
+  margin-right: 70px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;  
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#cancel-btn {
+	font-size: 13px;
+	margin: 15px;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	background-color: #abb5c4; 
+	border: solid white;
+	color: white;
+}
+
+#publish-trip {
+	font-size: 13px;
+	margin: 20px;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	background-color: #e2c0bb; 
+	border: solid white;
+	color: white;
 }

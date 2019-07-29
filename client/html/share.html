@@ -1,6 +1,6 @@
 <template name="share">
 
-	<!-- {{#if currentUser}} -->
+	{{#if currentUser}}
 	<div id="sharing-content">
 
 		<div class="sharingbox-header">
@@ -26,12 +26,14 @@
 
 			<div class="upload-btn-wrapper">
 				<label for="upload-trip" class="sharing-labels">Select Itinerary:</label>
-  				<button class="btn">Upload</button>
+  				<button class="upload-trip-btn">Upload</button>
   				<input type="file" name="upload-trip" id="upload-trip" class="form-control" />
 			</div>
 
-			<label for="description" class="sharing-labels">Description:</label>
-			<input type="text" name="description" id="descriptionBox" class="form-control" placeholder="Description">
+			<div>
+				<label for="description" class="sharing-labels">Description:</label>
+				<input type="text" name="description" id="descriptionBox" class="form-control" placeholder="Description">
+			</div>
 
 			<!--
 			<div class="tagBox">
@@ -58,11 +60,11 @@
 		</form>
 	</div>
 
-	<!-- {{else}}
+	{{else}}
 	<div id="login-notice">
 		<h2 class="login-notice">Please <a href="/login">Login</a> to Continue</h2>
 	</div>
 
-	{{/if}} -->
+	{{/if}}
 
 </template>

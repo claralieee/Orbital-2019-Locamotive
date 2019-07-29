@@ -1,6 +1,9 @@
 <template name="navbar">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		
@@ -26,8 +29,9 @@
     		</li>
 
       	{{#if currentUser}}
+
       		<li class="nav-item dropdown">
-    				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+    				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
     				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       					<a class="dropdown-item" id="profile-btn" href="/profile">Profile</a>
         				<a class="dropdown-item" id="logout-btn" href="/">Logout</a>

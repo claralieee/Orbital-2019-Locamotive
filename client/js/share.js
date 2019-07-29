@@ -4,14 +4,16 @@ Template.share.rendered = function() {
 
 Template.share.events({
 	"submit .form-share": function() {
-		var title = event.target.titleBox.value;
-		var desc = event.target.descriptionBox.value;
+		var title = event.target.title.value;
+		var destination = event.target.destination.value;
+		//change variable, check how to upload the image
 		var selected = event.target.tripSelect.value;
-		var tags = loopForm(event.target.tagBox);
+		var desc = event.target.description.value;
 
 		if (isNotEmpty(title) &&
-			isNotEmpty(desc) &&
-			isNotEmpty(selected)) {
+			isNotEmpty(destination) &&
+			isNotEmpty(selected) &&
+			isNotEmpty(desc)) {
 
 			Meteor.call('publishTrip', title, selected, desc);
 
