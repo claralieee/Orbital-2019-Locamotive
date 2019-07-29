@@ -1,7 +1,63 @@
+#empty-notice {
+	font-family: Poppins, Arial, serif;
+	text-align: center;
+	font-size: 20px;
+	margin: 0 auto;
+}
+
+.notrip-notice a {
+	color: #e2c0bb;
+}
+
 .trip-box {
 	font-family: Poppins, Arial, serif;
 	text-align: center;
-	margin: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 18px;
+	background-color: #f5f5f5;
+	width: 1200px;
+	padding: 10px;
+	margin-bottom: 35px;
+}
+
+.trip-box:hover {
+	background-color: #e2c0bb;
+}
+
+.trip-box span {
+	font-size: 16px;
+	margin: 10px;
+	padding: 5px;
+}
+
+.arrow {
+	width: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+    -webkit-transition: all 0.5s;
+       -moz-transition: all 0.5s;
+         -o-transition: all 0.5s;
+            transition: all 0.5s;
+}
+
+.arrow:hover {
+	width: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+    -webkit-transition: all 0.5s;
+       -moz-transition: all 0.5s;
+         -o-transition: all 0.5s;
+            transition: all 0.5s;
+}
+
+#vote {
+	margin-right: 0px;
+}
+
+#vote-score {
+	margin-left: 0px;
+	padding: 0px;
 }
 
 /* The main content
@@ -11,7 +67,7 @@
   padding-top: 40px;
   padding-right: 40px;
   margin: 0 0 40px 250px;
-} */
+} 
 
 .trip {
 	border: 5px solid #ececec;
@@ -99,3 +155,4 @@
 	padding-top: 0px;
 	margin-top: 0px;
 }
+*/
