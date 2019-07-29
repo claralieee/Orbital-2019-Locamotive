@@ -46,6 +46,8 @@
     margin-bottom: 5px;
     background-color: #abb5c4;
     border: 0px;
+    font-size: 14px;
+    vertical-align: middle;
 }
 
 .events-list {
