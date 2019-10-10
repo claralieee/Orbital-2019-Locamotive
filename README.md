@@ -4,9 +4,11 @@
 
 Achievement: Apollo 11
 
+
  ## Aim
 
  We aim to streamline the itinerary planning process and make it an enjoyable process for users.
+
 
  ## Motivation
 
@@ -16,6 +18,7 @@ Achievement: Apollo 11
  Lastly, people have to constantly read up on activities through different tabs. Hence, planning for a trip using such platforms is a very tedious process. 
  Although there are services out there that offer itinerary planning UIs, these services are premium only. Our service will be free (subject to advertisements) while providing a competitive planning experience. 
  We also aim to provide a platform where people can share the itineraries created on our site. Travellers who do not have the time are able to access one easily, without having to go through the trouble of planning one themselves or visiting multiple different websites.
+
 
 ## Features
 1.  Basic Website UI
@@ -37,8 +40,23 @@ Achievement: Apollo 11
 17. Profile page displays all user itineraries
 
 
+## Setting Up
+
+1. Install [Meteor](https://www.meteor.com/install)
+2. Fork and clone this repository
+3. Open a command prompt window (search command prompt and click the black thingy)
+4. Cd to the project file location in the command prompt window e.g. type ```cd desktop/orbital```  where ```orbital``` is the name of the file you clone onto your desktop
+5. Type ```meteor npm install --save @babel/runtime```
+6. Type ```meteor``` (**May take some time**)
+7. A browser window should open up (hosted on http://localhost:3000)
+8. Open src directory to view and start editing the code, save changes should be reflected on the browser window
+
+## Acknowledgements
+Thanks to Jefferson111 for the guide on setting up Meteor.
 
 
 
 
 
+
+ 
